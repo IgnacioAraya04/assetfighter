@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bduu7up835qbs"]
+
+[ext_resource type="PackedScene" uid="uid://bduu7up835qbs" path="res://saved_objects/static_body_2d.tscn" id="1_td1st"]
+
+[node name="StaticBody2D" instance=ExtResource("1_td1st")]

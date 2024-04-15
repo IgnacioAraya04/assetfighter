@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bduu7up835qbs"]
+
+[ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Sprite-0002.png" id="1_v2e7u"]
+[ext_resource type="PackedScene" uid="uid://bdic55jxxde5w" path="res://knight.tscn" id="2_avb63"]
+[ext_resource type="PackedScene" uid="uid://0hu3bnr62xbs" path="res://adventurer.tscn" id="3_rryyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
+size = Vector2(157, 44)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 318)
+scale = Vector2(2.31452, 1.64987)
+texture = ExtResource("1_v2e7u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(142, 382, 211, 382, 358, 433, 824, 431, 962, 381, 1037, 382, 1037, 476, 963, 476, 871, 531, 304, 535, 208, 479, 142, 478)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(739, 283)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(442, 284)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="Knight" parent="." instance=ExtResource("2_avb63")]
+position = Vector2(1014, 290)
+scale = Vector2(2.1, 2.1)
+
+[node name="adventurer" parent="." instance=ExtResource("3_rryyn")]
+position = Vector2(698, 212)
+scale = Vector2(2.5, 2.5)
