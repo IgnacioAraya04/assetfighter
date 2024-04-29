@@ -1,11 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://dabihhlx60mai"]
+[gd_scene load_steps=12 format=3 uid="uid://dabihhlx60mai"]
 
 [ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="1_80q3k"]
 [ext_resource type="Script" path="res://main.gd" id="1_gs6pu"]
 [ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="2_babxy"]
+[ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="2_ip5om"]
 [ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="3_qkig1"]
 [ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="4_70qu7"]
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="5_1f01a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48j6b"]
+shader = ExtResource("2_ip5om")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6l62"]
+shader = ExtResource("2_ip5om")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjox1"]
+shader = ExtResource("2_ip5om")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g673x"]
+shader = ExtResource("2_ip5om")
+shader_parameter/scroll_speed = 0.1
 
 [node name="Menu Inicio" type="Node2D"]
 position = Vector2(792, 542)
@@ -19,6 +36,8 @@ position = Vector2(603, 307)
 scale = Vector2(1.84, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_48j6b")
 position = Vector2(192.755, 117.22)
 scale = Vector2(1.84, 2)
 texture = ExtResource("1_80q3k")
@@ -28,6 +47,8 @@ position = Vector2(603, 307)
 scale = Vector2(1.84, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_v6l62")
 position = Vector2(192.755, 117.22)
 scale = Vector2(1.84, 2)
 texture = ExtResource("2_babxy")
@@ -37,6 +58,8 @@ position = Vector2(603, 307)
 scale = Vector2(1.84, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pjox1")
 position = Vector2(192.755, 117.22)
 scale = Vector2(1.84, 2)
 texture = ExtResource("3_qkig1")
@@ -46,6 +69,8 @@ position = Vector2(603, 307)
 scale = Vector2(1.84, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_g673x")
 position = Vector2(192.755, 117.22)
 scale = Vector2(1.84, 2)
 texture = ExtResource("4_70qu7")
