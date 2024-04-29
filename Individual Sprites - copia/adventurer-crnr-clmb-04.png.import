@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d04oyvv11fvhk"
-path="res://.godot/imported/adventurer-crnr-clmb-04.png-7966b4b4b6b74c0f4077e3c90c62ba3c.ctex"
+path="res://.godot/imported/adventurer-crnr-clmb-04.png-89f69e5c13132f3809b5fdfc7df4f9ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-crnr-clmb-04.png"
-dest_files=["res://.godot/imported/adventurer-crnr-clmb-04.png-7966b4b4b6b74c0f4077e3c90c62ba3c.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-crnr-clmb-04.png"
+dest_files=["res://.godot/imported/adventurer-crnr-clmb-04.png-89f69e5c13132f3809b5fdfc7df4f9ff.ctex"]
 
 [params]
 

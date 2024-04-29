@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfhsnliq6xuqq"
-path="res://.godot/imported/adventurer-ladder-climb-00.png-c110c1b4cc07b533da7d2fce793932fd.ctex"
+path="res://.godot/imported/adventurer-ladder-climb-00.png-368f04c368180df3f9dc813b76d44630.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-ladder-climb-00.png"
-dest_files=["res://.godot/imported/adventurer-ladder-climb-00.png-c110c1b4cc07b533da7d2fce793932fd.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-ladder-climb-00.png"
+dest_files=["res://.godot/imported/adventurer-ladder-climb-00.png-368f04c368180df3f9dc813b76d44630.ctex"]
 
 [params]
 

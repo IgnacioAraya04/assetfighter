@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di686638e8csi"
-path="res://.godot/imported/adventurer-run-00.png-08d3387abdd76f242704f5bee8f8ce21.ctex"
+path="res://.godot/imported/adventurer-run-00.png-0ee1bc7118e30e54411dedd86aa07434.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-run-00.png"
-dest_files=["res://.godot/imported/adventurer-run-00.png-08d3387abdd76f242704f5bee8f8ce21.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-run-00.png"
+dest_files=["res://.godot/imported/adventurer-run-00.png-0ee1bc7118e30e54411dedd86aa07434.ctex"]
 
 [params]
 

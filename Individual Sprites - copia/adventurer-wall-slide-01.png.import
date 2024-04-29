@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://swomvrm2n8xs"
-path="res://.godot/imported/adventurer-wall-slide-01.png-6a45701939e30c508078e80ec30acb29.ctex"
+path="res://.godot/imported/adventurer-wall-slide-01.png-d80bb284bb9aa23a7e97ccc93da319bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-wall-slide-01.png"
-dest_files=["res://.godot/imported/adventurer-wall-slide-01.png-6a45701939e30c508078e80ec30acb29.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-wall-slide-01.png"
+dest_files=["res://.godot/imported/adventurer-wall-slide-01.png-d80bb284bb9aa23a7e97ccc93da319bf.ctex"]
 
 [params]
 

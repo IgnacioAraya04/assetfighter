@@ -8,6 +8,7 @@
 size = Vector2(157, 44)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(1.67633, 1.71083)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(574, 318)

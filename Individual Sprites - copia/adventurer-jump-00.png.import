@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqawygrec85po"
-path="res://.godot/imported/adventurer-jump-00.png-ce5b819341ccd03b43bac5616906fde3.ctex"
+path="res://.godot/imported/adventurer-jump-00.png-5713468af8e3418fc8c319d11b584b10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-jump-00.png"
-dest_files=["res://.godot/imported/adventurer-jump-00.png-ce5b819341ccd03b43bac5616906fde3.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-jump-00.png"
+dest_files=["res://.godot/imported/adventurer-jump-00.png-5713468af8e3418fc8c319d11b584b10.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw736ne6183ox"
-path="res://.godot/imported/adventurer-attack3-02.png-2787786157f6639b1bba69f5f5667f70.ctex"
+path="res://.godot/imported/adventurer-attack3-02.png-a26c0d7bbdfc90e7e210308c9be4db00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Individual Sprites/adventurer-attack3-02.png"
-dest_files=["res://.godot/imported/adventurer-attack3-02.png-2787786157f6639b1bba69f5f5667f70.ctex"]
+source_file="res://Individual Sprites - copia/adventurer-attack3-02.png"
+dest_files=["res://.godot/imported/adventurer-attack3-02.png-a26c0d7bbdfc90e7e210308c9be4db00.ctex"]
 
 [params]
 
