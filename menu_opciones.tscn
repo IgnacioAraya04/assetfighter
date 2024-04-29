@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://fn6kj2voff7b"]
+
+[ext_resource type="Script" path="res://menu_opciones.gd" id="1_db733"]
+[ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="1_gqrhg"]
+[ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="2_a5yij"]
+[ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="3_a2ags"]
+[ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="4_5chd4"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="5_cmghl"]
+[ext_resource type="Texture2D" uid="uid://c7d7pnfekcwfu" path="res://Assets a Usar/CasualGameButtonsVol02/PNG/CGB02-red_S_btn.png" id="6_lbu8p"]
+
+[sub_resource type="GDScript" id="GDScript_hxwch"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Menu Opciones" type="Node2D"]
+script = ExtResource("1_db733")
+
+[node name="Fondo Inicio" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("1_gqrhg")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("2_a5yij")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("3_a2ags")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("4_5chd4")
+
+[node name="Contenedor Regresar" type="VBoxContainer" parent="."]
+offset_right = 136.0
+offset_bottom = 148.0
+script = SubResource("GDScript_hxwch")
+
+[node name="Regresar" type="Button" parent="Contenedor Regresar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cmghl")
+theme_override_font_sizes/font_size = 85
+text = " ↩"
+icon = ExtResource("6_lbu8p")
+flat = true
+icon_alignment = 1
+
+[node name="Musica" type="VBoxContainer" parent="."]
+offset_left = 824.0
+offset_top = 480.0
+offset_right = 864.0
+offset_bottom = 520.0
+
+[node name="HSlider" type="HSlider" parent="Musica"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Musica"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cmghl")
+theme_override_font_sizes/font_size = 50
+text = "Musica y SFX"
+
+[node name="Pantalla Completa" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Graficos" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

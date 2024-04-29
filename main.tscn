@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dabihhlx60mai"]
+
+[ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="1_80q3k"]
+[ext_resource type="Script" path="res://main.gd" id="1_gs6pu"]
+[ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="2_babxy"]
+[ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="3_qkig1"]
+[ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="4_70qu7"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="5_1f01a"]
+
+[node name="Menu Inicio" type="Node2D"]
+position = Vector2(792, 542)
+scale = Vector2(1.84, 2)
+script = ExtResource("1_gs6pu")
+
+[node name="Fondo Inicio" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("1_80q3k")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("2_babxy")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("3_qkig1")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("4_70qu7")
+
+[node name="Boton de jugar" type="VBoxContainer" parent="."]
+offset_right = 172.0
+offset_bottom = 21.0
+
+[node name="Jugar" type="Button" parent="Boton de jugar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1f01a")
+theme_override_font_sizes/font_size = 65
+text = "Jugar
+"
+flat = true
+
+[node name="Salir" type="Button" parent="Boton de jugar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1f01a")
+theme_override_font_sizes/font_size = 65
+text = "Salir"
+flat = true
+
+[node name="TituloDupeado" type="RichTextLabel" parent="."]
+offset_left = -334.0
+offset_top = -156.0
+offset_right = 565.0
+offset_bottom = -59.0
+theme_override_fonts/normal_font = ExtResource("5_1f01a")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave][shake][rainbow]Free Assets Fighter"
+
+[node name="Titulo" type="RichTextLabel" parent="."]
+offset_left = -328.0
+offset_top = -154.0
+offset_right = 570.0
+offset_bottom = -67.0
+theme_override_fonts/normal_font = ExtResource("5_1f01a")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave][shake][rainbow]Free Assets Fighter"
+
+[connection signal="pressed" from="Boton de jugar/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Boton de jugar/Salir" to="." method="_on_salir_pressed"]
