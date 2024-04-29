@@ -102,27 +102,36 @@ icon = ExtResource("6_lbu8p")
 flat = true
 icon_alignment = 1
 
-[node name="Musica" type="VBoxContainer" parent="."]
-offset_left = 805.0
-offset_top = 467.0
-offset_right = 1088.0
-offset_bottom = 529.0
+[node name="Opciones" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="Musica"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = 488.0
+offset_right = 1099.0
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Video" type="Button" parent="Opciones/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("5_cmghl")
+theme_override_font_sizes/font_size = 90
+text = "VIDEO"
 
-[node name="Label" type="Label" parent="Musica"]
+[node name="Audio" type="Button" parent="Opciones/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_cmghl")
-theme_override_font_sizes/font_size = 50
-text = "Musica y SFX"
-
-[node name="Pantalla Completa" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Graficos" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+theme_override_font_sizes/font_size = 90
+text = "Audio"
 
 [connection signal="pressed" from="Contenedor Regresar/Regresar" to="." method="_on_regresar_pressed"]
