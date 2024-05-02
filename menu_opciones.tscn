@@ -107,7 +107,6 @@ layout_mode = 2
 tab_alignment = 1
 
 [node name="Video" type="TabBar" parent="Menu de Opciones/OptionContainer/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
@@ -170,7 +169,8 @@ theme_override_fonts/font = ExtResource("9_3ptrr")
 theme_override_font_sizes/font_size = 20
 text = "Window Mode :"
 
-[node name="Opciones del tipo de Ventana" type="OptionButton" parent="Menu de Opciones/OptionContainer/TabContainer/Video"]
+[node name="OpcionesTipoVentana" type="OptionButton" parent="Menu de Opciones/OptionContainer/TabContainer/Video"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 298.0
 offset_top = 73.0
@@ -204,6 +204,7 @@ popup/item_3/text = "MailBox"
 popup/item_3/id = 3
 
 [node name="Sound" type="TabBar" parent="Menu de Opciones/OptionContainer/TabContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
@@ -326,7 +327,8 @@ flat = true
 icon_alignment = 1
 
 [connection signal="item_selected" from="Menu de Opciones/OptionContainer/TabContainer/Video/Listado de Resoluciones" to="Menu de Opciones" method="_on_resolution_optionbutton_item_selected"]
-[connection signal="item_selected" from="Menu de Opciones/OptionContainer/TabContainer/Video/Opciones del tipo de Ventana" to="Menu de Opciones" method="_on_window_mode_optionbutton_item_selected"]
+[connection signal="item_selected" from="Menu de Opciones/OptionContainer/TabContainer/Video/OpcionesTipoVentana" to="Menu de Opciones" method="_on_opciones_del_tipo_de_ventana_item_selected"]
+[connection signal="pressed" from="Menu de Opciones/OptionContainer/TabContainer/Video/OpcionesTipoVentana" to="Menu de Opciones" method="_on_opciones_tipo_ventana_pressed"]
 [connection signal="item_selected" from="Menu de Opciones/OptionContainer/TabContainer/Video/Lista de opciones de VSync" to="Menu de Opciones" method="_on_vsync_option_button_item_selected"]
 [connection signal="value_changed" from="Menu de Opciones/OptionContainer/TabContainer/Sound/Barra de sonido General" to="Menu de Opciones" method="_on_general_h_scroll_bar_value_changed"]
 [connection signal="value_changed" from="Menu de Opciones/OptionContainer/TabContainer/Sound/Barra de sonido General" to="Menu de Opciones/OptionContainer/TabContainer/Sound/Barra de sonido General/Porcentaje del sonido general" method="_on_h_scroll_bar_value_changed"]

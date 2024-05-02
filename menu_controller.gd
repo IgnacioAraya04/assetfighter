@@ -13,6 +13,8 @@ var audio: Vector3 = Vector3(70.0, 70.0, 70.0)
 
 @onready var resolution_option_button = get_node("%Listado de Resoluciones")
 @onready var option_container = get_node("%OptionContainer")
+@onready var window_mode_dropdown = %OpcionesTipoVentana
+var window_mode_options = ["Fullscreen", "Fullscreen Exclusive", "Windowed"]
 
 
 func _get_resolution(index) -> Vector2i:
@@ -63,8 +65,9 @@ func _save_settings() -> void:
 
 
 func _ready():
-	_load_settings()
+
 	resolution_option_button.select(_check_resolution(DisplayServer.screen_get_size()))
+	_load_settings()
 
 # -- VIDEO TAB --
 
@@ -98,3 +101,30 @@ func _on_vsync_option_button_item_selected(index):
 	vsync = index
 
 
+
+func _on_opciones_del_tipo_de_ventana_item_selected(index):
+	var selected_mode = window_mode_options[index]
+	if selected_mode == "Fullscreen":
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	elif selected_mode == "Fullscreen Exclusive":
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	pass # Replace with function body.
+
+
+func _on_opciones_tipo_ventana_pressed():
+	
+	window_mode_dropdown.clear()
+	
+	for option in window_mode_options:
+			window_mode_dropdown.add_item(option)
+
+	var current_mode = DisplayServer.window_get_mode()
+	if current_mode == DisplayServer.WINDOW_MODE_MAXIMIZED:
+		window_mode_dropdown.select(0)  # Fullscreen
+	elif current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		window_mode_dropdown.select(1)  # Fullscreen Exclusive
+	else:
+		window_mode_dropdown.select(2)  # Windowed
+	pass # Replace with function body.
