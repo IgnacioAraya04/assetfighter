@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bduu7up835qbs"]
+[gd_scene load_steps=7 format=3 uid="uid://bduu7up835qbs"]
 
+[ext_resource type="Script" path="res://static_body_2d.gd" id="1_uj7m5"]
 [ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Sprite-0002.png" id="1_v2e7u"]
 [ext_resource type="PackedScene" uid="uid://bdic55jxxde5w" path="res://knight.tscn" id="2_avb63"]
 [ext_resource type="PackedScene" uid="uid://0hu3bnr62xbs" path="res://adventurer.tscn" id="3_rryyn"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://menu_pausa.tscn" id="5_hloqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
 size = Vector2(157, 44)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2(1.67633, 1.70669)
+script = ExtResource("1_uj7m5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(574, 318)
@@ -35,3 +38,11 @@ scale = Vector2(2.1, 2.1)
 [node name="adventurer" parent="." instance=ExtResource("3_rryyn")]
 position = Vector2(698, 212)
 scale = Vector2(2.5, 2.5)
+
+[node name="MenuPausa" parent="." instance=ExtResource("5_hloqy")]
+visible = false
+offset_left = 496.322
+offset_top = 257.809
+offset_right = 496.322
+offset_bottom = 257.809
+scale = Vector2(1.22697, 1.22697)
