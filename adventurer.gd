@@ -42,7 +42,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("jump")
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_action_just_pressed("attackp2") and is_on_floor():
+	if Input.is_action_just_pressed("attackp2") and is_on_floor() and lePegan == false:
 		isAtacking= true
 		$areaataque/colisionataque.disabled = false
 		$AnimatedSprite2D.play("ataque")
@@ -57,6 +57,9 @@ func _on_areadaño_area_entered(area):
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "hurt":
 		lePegan = false
+		isAtacking = false
+		$areaataque/colisionataque.disabled = true
 	if $AnimatedSprite2D.animation == "ataque":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
+		
