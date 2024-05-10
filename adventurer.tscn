@@ -1,10 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://0hu3bnr62xbs"]
+[gd_scene load_steps=28 format=3 uid="uid://0hu3bnr62xbs"]
 
 [ext_resource type="Script" path="res://adventurer.gd" id="1_j18bi"]
+[ext_resource type="Texture2D" uid="uid://w0oj0vc60gv5" path="res://Individual Sprites/adventurer-attack2-01.png" id="2_3mp7f"]
 [ext_resource type="Texture2D" uid="uid://cghn13jsn5vrg" path="res://Individual Sprites - copia/adventurer-v1.5-Sheet.png" id="2_ijsfd"]
+[ext_resource type="Texture2D" uid="uid://ce0urloelmw5i" path="res://Individual Sprites/adventurer-attack2-02.png" id="3_1oa47"]
 [ext_resource type="Texture2D" uid="uid://duc864vhw0ia6" path="res://Individual Sprites/adventurer-hurt-00.png" id="3_o0pof"]
 [ext_resource type="Texture2D" uid="uid://d3ul36464t806" path="res://Individual Sprites/adventurer-hurt-01.png" id="4_i7156"]
+[ext_resource type="Texture2D" uid="uid://idm2720uo4od" path="res://Individual Sprites/adventurer-attack2-03.png" id="4_yf07m"]
+[ext_resource type="Texture2D" uid="uid://cy60l2jytj4qu" path="res://Individual Sprites/adventurer-attack2-04.png" id="5_hysnf"]
 [ext_resource type="Texture2D" uid="uid://8sbagnl8cdpy" path="res://Individual Sprites/adventurer-hurt-02.png" id="5_xwcrm"]
+[ext_resource type="Texture2D" uid="uid://do67tsf86spq6" path="res://Individual Sprites/adventurer-attack2-05.png" id="6_0xnln"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1i8wb"]
 atlas = ExtResource("2_ijsfd")
@@ -64,6 +69,26 @@ region = Rect2(300, 37, 50, 37)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_horlk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3mp7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1oa47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yf07m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hysnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0xnln")
+}],
+"loop": false,
+"name": &"ataque",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1i8wb")
@@ -144,12 +169,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kc8wo"]
 size = Vector2(11, 29)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2d20l"]
+radius = 7.0
+height = 28.0
+
 [node name="adventurer" type="CharacterBody2D"]
 script = ExtResource("1_j18bi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"hurt"
+animation = &"ataque"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
@@ -161,9 +191,21 @@ collision_mask = 2
 
 [node name="colisiondaño" type="CollisionShape2D" parent="areadaño"]
 light_mask = 2
-visibility_layer = 0
+visibility_layer = 2
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_kc8wo")
+
+[node name="areaataque" type="Area2D" parent="." groups=["ataquep2"]]
+position = Vector2(0, 1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(15, 3)
+shape = SubResource("CapsuleShape2D_2d20l")
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="areadaño" to="." method="_on_areadaño_area_entered"]
