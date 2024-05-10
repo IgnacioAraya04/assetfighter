@@ -33,8 +33,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		$AnimatedSprite2D.play("fall")
 		velocity.y += gravity * delta
-		if velocity.y < 1:
-			$AnimatedSprite2D.play("jump")
+		if lePegan == true:
+			$AnimatedSprite2D.play("hurt")
+			lePegan = false
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor() and lePegan == false and isAtacking == false:

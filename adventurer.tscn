@@ -197,12 +197,12 @@ shape = SubResource("RectangleShape2D_kc8wo")
 
 [node name="areaataque" type="Area2D" parent="." groups=["ataquep2"]]
 position = Vector2(0, 1)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
+collision_mask = 2
 
 [node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
-light_mask = 4
-visibility_layer = 4
+light_mask = 2
+visibility_layer = 2
 position = Vector2(15, 3)
 shape = SubResource("CapsuleShape2D_2d20l")
 disabled = true
