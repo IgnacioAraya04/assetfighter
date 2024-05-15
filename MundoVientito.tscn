@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://c57kjn1s6g1xo"]
+
+[ext_resource type="Script" path="res://static_body_2d.gd" id="1_78tyr"]
+[ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Sprite-0002.png" id="2_lnwoj"]
+[ext_resource type="PackedScene" uid="uid://cha044gfomqug" path="res://FireBoy.tscn" id="3_nnewt"]
+[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Assasin.tscn" id="4_uu6el"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://menu_pausa.tscn" id="5_e0sc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
+size = Vector2(157, 44)
+
+[node name="CoopNormal" type="StaticBody2D"]
+scale = Vector2(1.67633, 1.70669)
+script = ExtResource("1_78tyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 318)
+scale = Vector2(2.31452, 1.64987)
+texture = ExtResource("2_lnwoj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(142, 382, 211, 382, 358, 433, 824, 431, 962, 381, 1037, 382, 1037, 476, 963, 476, 871, 531, 304, 535, 208, 479, 142, 478)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(739, 283)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(442, 284)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="FireBoy" parent="." instance=ExtResource("3_nnewt")]
+position = Vector2(1006.96, 267.184)
+scale = Vector2(1.74999, 1.74999)
+
+[node name="Assasin" parent="." instance=ExtResource("4_uu6el")]
+position = Vector2(186.121, 262.496)
+scale = Vector2(1.78743, 1.78743)
+
+[node name="MenuPausa" parent="." instance=ExtResource("5_e0sc7")]
+visible = false
+offset_left = 496.322
+offset_top = 257.809
+offset_right = 496.322
+offset_bottom = 257.809
+scale = Vector2(1.22697, 1.22697)

@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
 size = Vector2(157, 44)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="CoopNormal" type="StaticBody2D"]
 scale = Vector2(1.67633, 1.70669)
 script = ExtResource("1_uj7m5")
 
