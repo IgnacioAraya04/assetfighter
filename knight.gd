@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAtacking= false
 var lePegan = false
+var dobleSalto = false
 
 func _physics_process(delta):
 	# Add the gravity
@@ -32,8 +33,16 @@ func _physics_process(delta):
 	if not is_on_floor():
 		$AnimatedSprite2D.play("fall")
 		velocity.y += gravity * delta
+		isAtacking = false
+		$areaataque/colisionataque.disabled = true
 		if lePegan == true:
 			lePegan = false
+		if Input.is_action_just_pressed("up") and dobleSalto == false:
+			velocity.y = JUMP_VELOCITY
+			dobleSalto = true
+	if is_on_floor():
+		dobleSalto = false
+
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("up") and is_on_floor() and isAtacking ==false and lePegan == false:
@@ -44,6 +53,11 @@ func _physics_process(delta):
 		isAtacking= true
 		$areaataque/colisionataque.disabled = false
 		$AnimatedSprite2D.play("espadazo")
+		
+	if is_on_floor() and Input.is_action_pressed("pausa"):
+		position.y -=3
+	if is_on_floor() and Input.is_action_pressed("down"):
+		position.y +=3
 		
 	move_and_slide()
 

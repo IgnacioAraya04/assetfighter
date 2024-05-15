@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://knight.gd" id="1_r2avq"]
 [ext_resource type="Texture2D" uid="uid://g78jkkba1nhp" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_Fall.png" id="2_o7477"]
-[ext_resource type="Texture2D" uid="uid://d22brk61tl0gx" path="res://Colour1/Outline/120x80_PNGSheets/_Attack2.png" id="2_p8rh2"]
+[ext_resource type="Texture2D" uid="uid://d22brk61tl0gx" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_Attack2.png" id="2_p8rh2"]
 [ext_resource type="Texture2D" uid="uid://dpmracugb6kv3" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_Jump.png" id="4_1vuxl"]
-[ext_resource type="Texture2D" uid="uid://bqwcwdi00npsm" path="res://Colour1/Outline/120x80_PNGSheets/_Idle.png" id="4_hl0q6"]
-[ext_resource type="Texture2D" uid="uid://y8g7lgsuq4es" path="res://Colour1/Outline/120x80_PNGSheets/_TurnAround.png" id="4_hrdtn"]
+[ext_resource type="Texture2D" uid="uid://bqwcwdi00npsm" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_Idle.png" id="4_hl0q6"]
+[ext_resource type="Texture2D" uid="uid://y8g7lgsuq4es" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_TurnAround.png" id="4_hrdtn"]
 [ext_resource type="Texture2D" uid="uid://dvvsucv6lw6tw" path="res://Colour1 - copia/Outline/120x80_PNGSheets/_Run.png" id="5_we7nh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15fl3"]
@@ -279,8 +279,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8oq0"]
-size = Vector2(16, 38)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70aol"]
+resource_local_to_scene = true
+height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lo8pa"]
 radius = 19.8473
@@ -291,23 +292,25 @@ script = ExtResource("1_r2avq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hfwlc")
-animation = &"hurt"
-frame = 1
-frame_progress = 1.0
+animation = &"espadazo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["sopapo"]]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(0, 21)
-shape = SubResource("RectangleShape2D_s8oq0")
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_70aol")
 
 [node name="areadaño" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="areadaño"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areadaño" groups=["sopapo"]]
+visible = false
 light_mask = 2
 visibility_layer = 2
 position = Vector2(0, 21)
-shape = SubResource("RectangleShape2D_s8oq0")
+shape = SubResource("CapsuleShape2D_70aol")
 
 [node name="areaataque" type="Area2D" parent="." groups=["ataque"]]
 collision_layer = 2

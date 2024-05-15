@@ -8,6 +8,9 @@ const JUMP_VELOCITY = -600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAtacking = false
 var lePegan = false
+var dobleSalto = false
+var knockbackdir = Vector2()
+var knocbackwait = 16
 
 func _physics_process(delta):
 	# Add the gravity
@@ -30,12 +33,24 @@ func _physics_process(delta):
 		if lePegan == false and isAtacking == false:
 			$AnimatedSprite2D.play("idle")
 		
-	if not is_on_floor():
-		$AnimatedSprite2D.play("fall")
+	if not is_on_floor() and lePegan == false:
 		velocity.y += gravity * delta
+		if isAtacking == false:
+			$AnimatedSprite2D.play("fall")
 		if lePegan == true:
 			$AnimatedSprite2D.play("hurt")
 			lePegan = false
+		if Input.is_action_just_pressed("ui_up") and dobleSalto == false:
+			velocity.y = JUMP_VELOCITY
+			dobleSalto = true
+		if Input.is_action_just_pressed("attackp2"):
+			isAtacking= true
+			$areaataque/colisionataque.disabled = false
+			$AnimatedSprite2D.play("airatack")
+
+		
+	if is_on_floor():
+		dobleSalto = false
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor() and lePegan == false and isAtacking == false:
@@ -46,13 +61,19 @@ func _physics_process(delta):
 		isAtacking= true
 		$areaataque/colisionataque.disabled = false
 		$AnimatedSprite2D.play("ataque")
-		
+
+	if is_on_floor() and Input.is_action_pressed("pausa"):
+		position.y -=3
+	if is_on_floor() and Input.is_action_pressed("ui_down"):
+		position.y +=3
 	move_and_slide()	
 
 func _on_areadaño_area_entered(area):
 		if area.is_in_group("ataque"):
 			$AnimatedSprite2D.play("hurt")
 			lePegan= true
+			
+
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "hurt":
@@ -63,3 +84,14 @@ func _on_animated_sprite_2d_animation_finished():
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
 		
+	if $AnimatedSprite2D.animation == "airatack":
+		$areaataque/colisionataque.disabled = true
+		isAtacking = false
+
+func knockback(force: float, x_pos : float, up_force : float):
+	if x_pos < global_position.x :
+		velocity = Vector2(force * 2, -force * up_force)
+	else:
+		velocity = Vector2(-force * 2, -force * up_force)
+
+
