@@ -7,7 +7,8 @@ const JUMP_VELOCITY = -600.0
 var porcentaje = 0
 var peso = 150
 var damage = 10
-
+var stock = 3
+var posicion_inicial = Vector2(766.556,169.92 )
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -67,14 +68,13 @@ func _physics_process(delta):
 		position.y +=3
 	# aplicar knockback
 	if is_knocked_back:
-		knockback_direction *= 1.5
+		knockback_direction *= 3
 		#añadir la fuerza del knockback a la velocidad
 		velocity += knockback_direction * (KNOCKBACK_FORCE + porcentaje)
 		# comprobar si el knockback ha terminado
-		if knockback_direction.length() < 15:
+		if knockback_direction.length() < 10:
 			is_knocked_back = false
 	move_and_slide()
-
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -96,4 +96,17 @@ func _on_areadaño_area_entered(area):
 		knockback_direction = knockback_direction.normalized()
 		is_knocked_back = true
 		porcentaje += damage
-		print(porcentaje)
+	
+	if area.is_in_group("muelte"):
+		stock -= 1
+		is_knocked_back = false
+		porcentaje = 0
+		if stock>0:
+			tp()
+		else:
+			get_tree().change_scene_to_file("res://main.tscn")
+			pass
+
+func tp():
+	global_position = posicion_inicial
+	set_physics_process(true)

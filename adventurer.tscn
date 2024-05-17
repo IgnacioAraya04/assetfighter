@@ -191,8 +191,8 @@ animations = [{
 radius = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nj0s"]
-radius = 6.99438
-height = 26.0593
+radius = 2.99759
+height = 15.9871
 
 [node name="adventurer" type="CharacterBody2D"]
 platform_on_leave = 2
@@ -226,8 +226,8 @@ collision_mask = 2
 [node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(14, 2)
-rotation = -0.0400961
+position = Vector2(16, -5)
+rotation = -4.71129
 shape = SubResource("CapsuleShape2D_3nj0s")
 disabled = true
 
