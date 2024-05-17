@@ -52,11 +52,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attackp1") and is_on_floor() and lePegan == false:
 		isAtacking= true
 		$areaataque/colisionataque.disabled = false
-		$AnimatedSprite2D.play("espadazo")
+		$AnimatedSprite2D.play("ataque")
 		
-	if is_on_floor() and Input.is_action_pressed("pausa"):
+	if is_on_floor() and Input.is_action_pressed("pause"):
 		position.y -=3
-	if is_on_floor() and Input.is_action_pressed("down"):
+	if is_on_floor() and Input.is_action_pressed("ui_down"):
 		position.y +=3
 		
 	move_and_slide()
@@ -64,13 +64,13 @@ func _physics_process(delta):
 
 
 func _on_animated_sprite_2d_animation_finished():
-	if $AnimatedSprite2D.animation == "espadazo":
-		$areaataque/colisionataque.disabled = true
-		isAtacking = false	
-	if$AnimatedSprite2D.animation == "hurt":
+	if $AnimatedSprite2D.animation == "hurt":
 		lePegan = false
 		isAtacking = false
 		$areaataque/colisionataque.disabled = true
+	if $AnimatedSprite2D.animation == "ataque":
+		$areaataque/colisionataque.disabled = true
+		isAtacking = false
 
 
 func _on_areadaño_area_entered(area):

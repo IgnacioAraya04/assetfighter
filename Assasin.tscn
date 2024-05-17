@@ -1,14 +1,12 @@
-[gd_scene load_steps=42 format=3 uid="uid://dpej2nlyn63xp"]
+[gd_scene load_steps=40 format=3 uid="uid://dpej2nlyn63xp"]
 
-[ext_resource type="Script" path="res://adventurer.gd" id="1_tddff"]
-[ext_resource type="Texture2D" uid="uid://dol8f2ku6d0ks" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_1.png" id="2_sxdbb"]
-[ext_resource type="Texture2D" uid="uid://dc0pyp47dekne" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_2.png" id="3_xy6x2"]
-[ext_resource type="Texture2D" uid="uid://bur6dwyrd7o1x" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_3.png" id="4_8hogn"]
-[ext_resource type="Texture2D" uid="uid://bpniin60oues0" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_4.png" id="5_ynjiu"]
-[ext_resource type="Texture2D" uid="uid://d0n7lhupxfn44" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_5.png" id="6_ig0qs"]
-[ext_resource type="Texture2D" uid="uid://bms2ptlki8lii" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_6.png" id="7_o8u1i"]
-[ext_resource type="Texture2D" uid="uid://dwie5eku6s5ga" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_7.png" id="8_5q20k"]
-[ext_resource type="Texture2D" uid="uid://b3g6ua4lxvbgv" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/08_2_atk/08_2_atk_8.png" id="9_q7tn5"]
+[ext_resource type="Script" path="res://knight.gd" id="1_a3coe"]
+[ext_resource type="Texture2D" uid="uid://iuevbne706xn" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_1.png" id="2_ujlj7"]
+[ext_resource type="Texture2D" uid="uid://cpgbdh8od1n6j" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_2.png" id="3_4lfsk"]
+[ext_resource type="Texture2D" uid="uid://dc7wbtqd5xrg2" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_3.png" id="4_smhd2"]
+[ext_resource type="Texture2D" uid="uid://dc1nip0krsg04" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_4.png" id="5_djo3q"]
+[ext_resource type="Texture2D" uid="uid://ctwfkmul4vokl" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_5.png" id="6_nqc8c"]
+[ext_resource type="Texture2D" uid="uid://fq8wnlbf1kc7" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_6.png" id="7_eirtf"]
 [ext_resource type="Texture2D" uid="uid://ce580lix50ltp" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_1.png" id="10_gyuad"]
 [ext_resource type="Texture2D" uid="uid://2wmlacgangob" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_2.png" id="11_1kq3h"]
 [ext_resource type="Texture2D" uid="uid://bpc1xa0e3444h" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_3.png" id="12_v2swi"]
@@ -42,28 +40,22 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sxdbb")
+"texture": ExtResource("2_ujlj7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_xy6x2")
+"texture": ExtResource("3_4lfsk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_8hogn")
+"texture": ExtResource("4_smhd2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ynjiu")
+"texture": ExtResource("5_djo3q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ig0qs")
+"texture": ExtResource("6_nqc8c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_o8u1i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_5q20k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_q7tn5")
+"texture": ExtResource("7_eirtf")
 }],
 "loop": false,
 "name": &"ataque",
@@ -192,11 +184,13 @@ radius = 8.0
 height = 28.0
 
 [node name="Assasin" type="CharacterBody2D"]
-script = ExtResource("1_tddff")
+script = ExtResource("1_a3coe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"run"
+animation = &"ataque"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 43.5)
@@ -221,7 +215,7 @@ collision_mask = 2
 [node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(19, 3)
+position = Vector2(25, 3)
 shape = SubResource("CapsuleShape2D_2d20l")
 disabled = true
 

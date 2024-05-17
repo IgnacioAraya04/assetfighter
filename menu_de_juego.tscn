@@ -150,5 +150,6 @@ flat = true
 icon_alignment = 1
 
 [connection signal="pressed" from="Contenedor Opciones/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Contenedor Solo/Modo Solo" to="." method="_on_modo_solo_pressed"]
 [connection signal="pressed" from="Contenedor Coop/Modo Cooperativo" to="." method="_on_modo_cooperativo_pressed"]
 [connection signal="pressed" from="Contenedor Regresar/Regresar" to="." method="_on_regresar_pressed"]

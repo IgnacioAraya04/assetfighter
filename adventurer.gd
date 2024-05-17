@@ -62,7 +62,7 @@ func _physics_process(delta):
 		$areaataque/colisionataque.disabled = false
 		$AnimatedSprite2D.play("ataque")
 
-	if is_on_floor() and Input.is_action_pressed("pausa"):
+	if is_on_floor() and Input.is_action_pressed("pause"):
 		position.y -=3
 	if is_on_floor() and Input.is_action_pressed("ui_down"):
 		position.y +=3
