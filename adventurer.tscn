@@ -190,16 +190,18 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxt8c"]
 radius = 6.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2d20l"]
-radius = 7.0
-height = 28.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nj0s"]
+radius = 6.99438
+height = 26.0593
 
 [node name="adventurer" type="CharacterBody2D"]
+platform_on_leave = 2
 script = ExtResource("1_j18bi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"airatack"
+animation = &"ataque"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
@@ -224,8 +226,9 @@ collision_mask = 2
 [node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(15, 3)
-shape = SubResource("CapsuleShape2D_2d20l")
+position = Vector2(14, 2)
+rotation = -0.0400961
+shape = SubResource("CapsuleShape2D_3nj0s")
 disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

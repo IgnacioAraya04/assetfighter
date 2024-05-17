@@ -192,7 +192,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,7 +292,7 @@ script = ExtResource("1_r2avq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hfwlc")
-animation = &"run"
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["sopapo"]]
 light_mask = 2

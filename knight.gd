@@ -1,14 +1,21 @@
 extends CharacterBody2D
 
-
+const KNOCKBACK_FORCE = 440 
 const SPEED = 250.0
 const JUMP_VELOCITY = -600.0
+
+var porcentaje = 0
+var peso = 150
+var damage = 10
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAtacking= false
 var lePegan = false
 var dobleSalto = false
+var knockback_direction = Vector2.ZERO
+var is_knocked_back = false
 
 func _physics_process(delta):
 	# Add the gravity
@@ -56,9 +63,16 @@ func _physics_process(delta):
 		
 	if is_on_floor() and Input.is_action_pressed("pause"):
 		position.y -=3
-	if is_on_floor() and Input.is_action_pressed("ui_down"):
+	if is_on_floor() and Input.is_action_pressed("down"):
 		position.y +=3
-		
+	# aplicar knockback
+	if is_knocked_back:
+		knockback_direction *= 1.5
+		#añadir la fuerza del knockback a la velocidad
+		velocity += knockback_direction * (KNOCKBACK_FORCE + porcentaje)
+		# comprobar si el knockback ha terminado
+		if knockback_direction.length() < 15:
+			is_knocked_back = false
 	move_and_slide()
 
 
@@ -77,5 +91,9 @@ func _on_areadaño_area_entered(area):
 	if area.is_in_group("ataquep2"):
 		$AnimatedSprite2D.play("hurt")
 		lePegan = true
-		print("si pego")
-
+		#aplicar knockback
+		knockback_direction = global_position - area.global_position
+		knockback_direction = knockback_direction.normalized()
+		is_knocked_back = true
+		porcentaje += damage
+		print(porcentaje)
