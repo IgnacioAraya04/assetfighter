@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bduu7up835qbs"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_uj7m5"]
-[ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Assets a Usar/Sprite-0002.png" id="1_v2e7u"]
 [ext_resource type="PackedScene" uid="uid://bdic55jxxde5w" path="res://Personajes/knight.tscn" id="2_avb63"]
+[ext_resource type="Texture2D" uid="uid://6nymtq3ts45i" path="res://Assets a Usar/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="2_e1mna"]
 [ext_resource type="PackedScene" uid="uid://0hu3bnr62xbs" path="res://Personajes/adventurer.tscn" id="3_rryyn"]
 [ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_hloqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
-size = Vector2(157, 44)
+size = Vector2(141.283, 23.4372)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3poh"]
 size = Vector2(39.9683, 944.382)
@@ -20,20 +20,25 @@ scale = Vector2(1.67633, 1.70669)
 script = ExtResource("1_uj7m5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(574, 318)
-scale = Vector2(2.31452, 1.64987)
-texture = ExtResource("1_v2e7u")
+position = Vector2(570.869, 316.176)
+scale = Vector2(1.19685, 1.19006)
+texture = ExtResource("2_e1mna")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(142, 382, 211, 382, 358, 433, 824, 431, 962, 381, 1037, 382, 1037, 476, 963, 476, 871, 531, 304, 535, 208, 479, 142, 478)
+polygon = PackedVector2Array(209.983, 468.744, 209.983, 426.557, 930.604, 426.557, 925.832, 473.431, 873.336, 618.742, 567.907, 614.054, 295.884, 614.054, 257.706, 590.617, 238.617, 543.743)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(788.378, 295.308)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(739, 283)
+position = Vector2(569.758, 196.872)
 shape = SubResource("RectangleShape2D_uyor7")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(442, 284)
+position = Vector2(355.039, 295.308)
 shape = SubResource("RectangleShape2D_uyor7")
 one_way_collision = true
 
