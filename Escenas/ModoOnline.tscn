@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c57kjn1s6g1xo"]
+[gd_scene load_steps=9 format=3 uid="uid://cjqbm20hv3bgy"]
 
-[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_78tyr"]
-[ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Assets a Usar/Sprite-0002.png" id="2_lnwoj"]
-[ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_fq7bd"]
-[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="4_uu6el"]
-[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_e0sc7"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_bcb7q"]
+[ext_resource type="Texture2D" uid="uid://cgdstwtuqrfwa" path="res://Assets a Usar/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="2_vgbw8"]
+[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="3_as8d4"]
+[ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_wv3lh"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_8pupv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
-size = Vector2(157, 44)
+size = Vector2(219.326, 28.621)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfm31"]
 size = Vector2(39.9683, 944.382)
@@ -17,35 +17,41 @@ size = Vector2(1607.91, 37.5387)
 
 [node name="CoopNormal" type="StaticBody2D"]
 scale = Vector2(1.67633, 1.70669)
-script = ExtResource("1_78tyr")
+script = ExtResource("1_bcb7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(574, 318)
-scale = Vector2(2.31452, 1.64987)
-texture = ExtResource("2_lnwoj")
+position = Vector2(-116.326, -83.202)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("2_vgbw8")
+centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(142, 382, 211, 382, 358, 433, 824, 431, 962, 381, 1037, 382, 1037, 476, 963, 476, 871, 531, 304, 535, 208, 479, 142, 478)
+polygon = PackedVector2Array(195.666, 407.807, 396.103, 408.979, 763.573, 408.979, 964.011, 407.807, 964.011, 434.76, 916.287, 501.556, 730.167, 614.054, 439.054, 609.367, 243.389, 501.556, 195.666, 435.932)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(739, 283)
+position = Vector2(804.138, 266.598)
 shape = SubResource("RectangleShape2D_uyor7")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(442, 284)
+position = Vector2(354.942, 266.598)
 shape = SubResource("RectangleShape2D_uyor7")
 one_way_collision = true
 
-[node name="Assasin" parent="." instance=ExtResource("4_uu6el")]
-position = Vector2(176.576, 248.434)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(580.535, 111.327)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="Assasin" parent="." instance=ExtResource("3_as8d4")]
+position = Vector2(233.844, 271.871)
 scale = Vector2(2.0078, 2.0078)
 
-[node name="Windman" parent="." instance=ExtResource("4_fq7bd")]
-position = Vector2(983.1, 234.372)
+[node name="Windman" parent="." instance=ExtResource("4_wv3lh")]
+position = Vector2(916.287, 257.809)
 scale = Vector2(2.33592, 2.33592)
 
-[node name="MenuPausa" parent="." instance=ExtResource("5_e0sc7")]
+[node name="MenuPausa" parent="." instance=ExtResource("5_8pupv")]
 visible = false
 offset_left = 496.322
 offset_top = 257.809
