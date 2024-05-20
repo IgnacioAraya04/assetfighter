@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://dabihhlx60mai"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/main.gd" id="1_ggn40"]
+[ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="2_6cpmq"]
+[ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="3_ugdjl"]
+[ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="4_d40l3"]
+[ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="5_busk2"]
+[ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="6_6dd0h"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="7_dfjqu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48j6b"]
+shader = ExtResource("2_6cpmq")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6l62"]
+shader = ExtResource("2_6cpmq")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjox1"]
+shader = ExtResource("2_6cpmq")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g673x"]
+shader = ExtResource("2_6cpmq")
+shader_parameter/scroll_speed = 0.1
+
+[node name="Menu Inicio" type="Node2D"]
+position = Vector2(792, 542)
+scale = Vector2(1.84, 2)
+script = ExtResource("1_ggn40")
+
+[node name="Fondo Inicio" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_48j6b")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("3_ugdjl")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_v6l62")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("4_d40l3")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pjox1")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("5_busk2")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_g673x")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("6_6dd0h")
+
+[node name="Boton de jugar" type="VBoxContainer" parent="."]
+offset_right = 172.0
+offset_bottom = 21.0
+
+[node name="Jugar" type="Button" parent="Boton de jugar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_dfjqu")
+theme_override_font_sizes/font_size = 65
+text = "Jugar
+"
+flat = true
+
+[node name="Salir" type="Button" parent="Boton de jugar"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_dfjqu")
+theme_override_font_sizes/font_size = 65
+text = "Salir"
+flat = true
+
+[node name="TituloDupeado" type="RichTextLabel" parent="."]
+offset_left = -334.0
+offset_top = -156.0
+offset_right = 565.0
+offset_bottom = -59.0
+theme_override_fonts/normal_font = ExtResource("7_dfjqu")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave][shake][rainbow]Free Assets Fighter"
+
+[node name="Titulo" type="RichTextLabel" parent="."]
+offset_left = -328.0
+offset_top = -154.0
+offset_right = 570.0
+offset_bottom = -67.0
+theme_override_fonts/normal_font = ExtResource("7_dfjqu")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave][shake][rainbow]Free Assets Fighter"
+
+[connection signal="pressed" from="Boton de jugar/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Boton de jugar/Salir" to="." method="_on_salir_pressed"]

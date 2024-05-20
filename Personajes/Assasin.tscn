@@ -1,0 +1,223 @@
+[gd_scene load_steps=40 format=3 uid="uid://dpej2nlyn63xp"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/knight.gd" id="1_a3coe"]
+[ext_resource type="Texture2D" uid="uid://iuevbne706xn" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_1.png" id="2_ujlj7"]
+[ext_resource type="Texture2D" uid="uid://cpgbdh8od1n6j" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_2.png" id="3_4lfsk"]
+[ext_resource type="Texture2D" uid="uid://dc7wbtqd5xrg2" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_3.png" id="4_smhd2"]
+[ext_resource type="Texture2D" uid="uid://dc1nip0krsg04" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_4.png" id="5_djo3q"]
+[ext_resource type="Texture2D" uid="uid://ctwfkmul4vokl" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_5.png" id="6_nqc8c"]
+[ext_resource type="Texture2D" uid="uid://fq8wnlbf1kc7" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_6.png" id="7_eirtf"]
+[ext_resource type="Texture2D" uid="uid://ce580lix50ltp" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_1.png" id="10_gyuad"]
+[ext_resource type="Texture2D" uid="uid://2wmlacgangob" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_2.png" id="11_1kq3h"]
+[ext_resource type="Texture2D" uid="uid://bpc1xa0e3444h" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_3.png" id="12_v2swi"]
+[ext_resource type="Texture2D" uid="uid://dotq4a8p80t73" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_1.png" id="13_w5rq3"]
+[ext_resource type="Texture2D" uid="uid://cmy5fjmgtrhkg" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_2.png" id="14_winkn"]
+[ext_resource type="Texture2D" uid="uid://s4gwrb6c4w4r" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_3.png" id="15_8ri6v"]
+[ext_resource type="Texture2D" uid="uid://fnqvspvhmxc2" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_4.png" id="16_kgyhl"]
+[ext_resource type="Texture2D" uid="uid://db643drtaaknp" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_5.png" id="17_jjy6n"]
+[ext_resource type="Texture2D" uid="uid://d0lv76xtdnk4g" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/12_take_hit/12_take_hit_6.png" id="18_40ctf"]
+[ext_resource type="Texture2D" uid="uid://bmjeb2op8j7cy" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_1.png" id="19_ln1ed"]
+[ext_resource type="Texture2D" uid="uid://cppcahks22sen" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_2.png" id="20_w4g2v"]
+[ext_resource type="Texture2D" uid="uid://dxssuxr6aho5g" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_3.png" id="21_nslp8"]
+[ext_resource type="Texture2D" uid="uid://dc03gi2guwvdu" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_4.png" id="22_200wj"]
+[ext_resource type="Texture2D" uid="uid://cf8af6l1mjyoi" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_5.png" id="23_ypuvm"]
+[ext_resource type="Texture2D" uid="uid://csknetffdso8r" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_6.png" id="24_1audd"]
+[ext_resource type="Texture2D" uid="uid://1me3wgsghf24" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_7.png" id="25_y2rwd"]
+[ext_resource type="Texture2D" uid="uid://c0hn2er6wpvas" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/01_idle/01_idle_8.png" id="26_tf7jb"]
+[ext_resource type="Texture2D" uid="uid://dg2ic4h7b215c" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_up/03_jump_up_1.png" id="27_r3m1g"]
+[ext_resource type="Texture2D" uid="uid://cfvbgmui52g4n" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_up/03_jump_up_2.png" id="28_8bhme"]
+[ext_resource type="Texture2D" uid="uid://btbxcfo25ww2s" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_up/03_jump_up_3.png" id="29_xljut"]
+[ext_resource type="Texture2D" uid="uid://cmcnn440nv0mo" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_1.png" id="30_1moyg"]
+[ext_resource type="Texture2D" uid="uid://c7wbsbh4dlg47" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_2.png" id="31_5eu2c"]
+[ext_resource type="Texture2D" uid="uid://btk7bcjno5m8y" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_3.png" id="32_nq34r"]
+[ext_resource type="Texture2D" uid="uid://dxux6ltwtj631" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_4.png" id="33_swe7d"]
+[ext_resource type="Texture2D" uid="uid://dk4in5rd56hbq" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_5.png" id="34_h40ik"]
+[ext_resource type="Texture2D" uid="uid://c5ju057shn6i" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_6.png" id="35_jh7o1"]
+[ext_resource type="Texture2D" uid="uid://cmfqpmfsr3jkt" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_7.png" id="36_ecdwe"]
+[ext_resource type="Texture2D" uid="uid://5ijc2nfr5qru" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/02_run/02_run_8.png" id="37_a3u2v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_horlk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ujlj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4lfsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_smhd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_djo3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nqc8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eirtf")
+}],
+"loop": false,
+"name": &"ataque",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_gyuad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1kq3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2swi")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_w5rq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_winkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8ri6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kgyhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jjy6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_40ctf")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ln1ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w4g2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nslp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_200wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ypuvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1audd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_y2rwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tf7jb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_r3m1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8bhme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xljut")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_1moyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5eu2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nq34r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_swe7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_h40ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jh7o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ecdwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_a3u2v")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxg7o"]
+radius = 11.0
+height = 45.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yccm7"]
+radius = 11.0
+height = 45.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2d20l"]
+radius = 7.0
+height = 38.0
+
+[node name="Assasin" type="CharacterBody2D"]
+script = ExtResource("1_a3coe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_horlk")
+animation = &"ataque"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 43.5)
+shape = SubResource("CapsuleShape2D_vxg7o")
+
+[node name="areadaño" type="Area2D" parent="."]
+position = Vector2(0, 40)
+collision_layer = 2
+collision_mask = 2
+
+[node name="colisiondaño" type="CollisionShape2D" parent="areadaño"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 3.5)
+shape = SubResource("CapsuleShape2D_yccm7")
+
+[node name="areaataque" type="Area2D" parent="." groups=["ataquep2"]]
+position = Vector2(0, 41)
+collision_layer = 2
+collision_mask = 2
+
+[node name="colisionataque" type="CollisionShape2D" parent="areaataque"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(30, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2d20l")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="areadaño" to="." method="_on_areadaño_area_entered"]
