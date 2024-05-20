@@ -224,5 +224,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2d20l")
 disabled = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="areadaño" to="." method="_on_areadaño_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

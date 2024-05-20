@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjqbm20hv3bgy"]
+[gd_scene load_steps=10 format=3 uid="uid://cjqbm20hv3bgy"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_bcb7q"]
 [ext_resource type="Texture2D" uid="uid://cgdstwtuqrfwa" path="res://Assets a Usar/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="2_vgbw8"]
 [ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="3_as8d4"]
 [ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_wv3lh"]
 [ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_8pupv"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_vu6ow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
 size = Vector2(219.326, 28.621)
@@ -79,3 +80,25 @@ shape = SubResource("RectangleShape2D_ndbg1")
 [node name="blastzone_down" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(576.855, 717.178)
 shape = SubResource("RectangleShape2D_ndbg1")
+
+[node name="Ganador2" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 262.478
+offset_top = 281.246
+offset_right = 897.478
+offset_bottom = 342.246
+theme_override_fonts/normal_font = ExtResource("6_vu6ow")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Ganador [wave][shake][rainbow] Jugador 2"
+
+[node name="Ganador1" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 262.478
+offset_top = 281.246
+offset_right = 897.478
+offset_bottom = 342.246
+theme_override_fonts/normal_font = ExtResource("6_vu6ow")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Ganador [wave][shake][rainbow] Jugador 1"

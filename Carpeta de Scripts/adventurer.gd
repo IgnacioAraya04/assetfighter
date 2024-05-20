@@ -82,6 +82,9 @@ func _physics_process(delta):
 			is_knocked_back = false
 	move_and_slide()	
 
+@onready var timer: Timer = $Timer
+@onready var ganador1 = $"../Ganador1"
+
 func _on_areadaño_area_entered(area):
 	if area.is_in_group("ataque"):
 		$AnimatedSprite2D.play("hurt")
@@ -98,7 +101,8 @@ func _on_areadaño_area_entered(area):
 		if stock>0:
 			tp()
 		else:
-			get_tree().change_scene_to_file("res://Escenas/main.tscn")
+			timer.start(3)
+			ganador1.show()
 			pass
 
 func _on_animated_sprite_2d_animation_finished():
@@ -116,3 +120,7 @@ func tp():
 	global_position = posicion_inicial
 	set_physics_process(true)
 
+func _on_timer_timeout():
+	ganador1.hide()
+	get_tree().change_scene_to_file("res://Escenas/main.tscn")
+	pass # Replace with function body.

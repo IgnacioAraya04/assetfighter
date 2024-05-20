@@ -86,6 +86,8 @@ func _on_animated_sprite_2d_animation_finished():
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
 
+@onready var timer: Timer = $Timer
+@onready var ganador2 = $"../Ganador2"
 
 func _on_areadaño_area_entered(area):
 	if area.is_in_group("ataquep2"):
@@ -104,9 +106,16 @@ func _on_areadaño_area_entered(area):
 		if stock>0:
 			tp()
 		else:
-			get_tree().change_scene_to_file("res://Escenas/main.tscn")
-			pass
-
+			
+			timer.start(3)
+			ganador2.show()
+			
 func tp():
 	global_position = posicion_inicial
 	set_physics_process(true)
+
+
+func _on_timer_timeout():
+	ganador2.hide()
+	get_tree().change_scene_to_file("res://Escenas/main.tscn")
+	pass # Replace with function body.
