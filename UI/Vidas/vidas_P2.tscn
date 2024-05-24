@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yhfsj8pf8bj"]
+
+[ext_resource type="Script" path="res://UI/Vidas/vidas_P2.gd" id="1_cuqnt"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 285.0
+offset_bottom = 247.0
+theme_override_constants/separation = 100
+script = ExtResource("1_cuqnt")

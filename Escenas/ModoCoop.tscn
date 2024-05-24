@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bduu7up835qbs"]
+[gd_scene load_steps=12 format=3 uid="uid://bduu7up835qbs"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_uj7m5"]
 [ext_resource type="PackedScene" uid="uid://bdic55jxxde5w" path="res://Personajes/knight.tscn" id="2_avb63"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://0hu3bnr62xbs" path="res://Personajes/adventurer.tscn" id="3_rryyn"]
 [ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_hloqy"]
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_4ogya"]
+[ext_resource type="PackedScene" uid="uid://1rr1vxum5bd1" path="res://UI/Vidas/vidas_P1.tscn" id="6_d053i"]
+[ext_resource type="PackedScene" uid="uid://c5yhfsj8pf8bj" path="res://UI/Vidas/vidas_P2.tscn" id="7_2xrr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
 size = Vector2(141.283, 23.4372)
@@ -50,6 +52,7 @@ scale = Vector2(2.1, 2.1)
 [node name="adventurer" parent="." instance=ExtResource("3_rryyn")]
 position = Vector2(782.662, 239.059)
 scale = Vector2(2.5, 2.5)
+max_vida = 3
 
 [node name="MenuPausa" parent="." instance=ExtResource("5_hloqy")]
 visible = false
@@ -79,6 +82,20 @@ shape = SubResource("RectangleShape2D_j6dji")
 [node name="blastzone_down" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(576.855, 717.178)
 shape = SubResource("RectangleShape2D_j6dji")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vidas_P1" parent="UI" instance=ExtResource("6_d053i")]
+offset_left = 473.0
+offset_top = 985.0
+offset_right = 774.0
+offset_bottom = 1105.0
+
+[node name="Vidas_P2" parent="UI" instance=ExtResource("7_2xrr8")]
+offset_left = 1219.0
+offset_top = 984.0
+offset_right = 1517.0
+offset_bottom = 1101.0
 
 [node name="Ganador2" type="RichTextLabel" parent="."]
 visible = false

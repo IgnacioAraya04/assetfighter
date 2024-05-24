@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal cambia_vida
 const KNOCKBACK_FORCE = 440 
 const SPEED = 250.0
 const JUMP_VELOCITY = -600.0
@@ -7,7 +8,9 @@ const JUMP_VELOCITY = -600.0
 var porcentaje = 0
 var peso = 150
 var damage = 10
-var stock = 3
+
+@export var max_vida = 3 
+@onready var stock1: int  = max_vida
 var posicion_inicial = Vector2(766.556,169.92 )
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -100,10 +103,11 @@ func _on_areadaño_area_entered(area):
 		porcentaje += damage
 	
 	if area.is_in_group("muelte"):
-		stock -= 1
+		stock1 -= 1
+		cambia_vida.emit(stock1)
 		is_knocked_back = false
 		porcentaje = 0
-		if stock>0:
+		if stock1>0:
 			tp()
 		else:
 			

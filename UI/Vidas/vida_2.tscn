@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpvfltmxt0vfa"]
+
+[ext_resource type="Texture2D" uid="uid://ibixotvrrti2" path="res://Assets a Usar/vida 2.png" id="1_pvj0p"]
+[ext_resource type="Script" path="res://UI/Vidas/vida_2.gd" id="1_srtn0"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 87.0
+offset_bottom = 84.0
+script = ExtResource("1_srtn0")
+
+[node name="Vida2" type="Sprite2D" parent="."]
+position = Vector2(45.625, 42.25)
+scale = Vector2(0.571, 0.578333)
+texture = ExtResource("1_pvj0p")
+hframes = 2

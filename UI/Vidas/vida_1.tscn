@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4skl7x1my05"]
+
+[ext_resource type="Script" path="res://UI/Vidas/vida_1.gd" id="1_uar0g"]
+[ext_resource type="Texture2D" uid="uid://d167cjpci8as2" path="res://Assets a Usar/vida 1.png" id="1_v2vy2"]
+
+[node name="vida1" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 87.0
+offset_bottom = 84.0
+script = ExtResource("1_uar0g")
+metadata/_edit_horizontal_guides_ = [-430.0]
+
+[node name="corazon1" type="Sprite2D" parent="."]
+position = Vector2(-28, -45)
+scale = Vector2(0.59, 0.581)
+texture = ExtResource("1_v2vy2")
+centered = false
+hframes = 2

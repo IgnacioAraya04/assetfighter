@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ibixotvrrti2"
-path="res://.godot/imported/vida 2.png-08899a9b9308966a81dd0bdbafc14275.ctex"
+path="res://.godot/imported/vida 2.png-eba2289bea1522bf2eecc318ab0a34f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Vidas/vida 2.png"
-dest_files=["res://.godot/imported/vida 2.png-08899a9b9308966a81dd0bdbafc14275.ctex"]
+source_file="res://Assets a Usar/vida 2.png"
+dest_files=["res://.godot/imported/vida 2.png-eba2289bea1522bf2eecc318ab0a34f6.ctex"]
 
 [params]
 
