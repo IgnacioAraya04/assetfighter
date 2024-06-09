@@ -7,7 +7,7 @@ func _on_regresar_pressed():
 
 
 func _on_modo_cooperativo_pressed():
-	get_tree().change_scene_to_file("res://Escenas/ModoCoop.tscn")
+	get_tree().change_scene_to_file("res://Escenas/characterSelecton.tscn")
 	pass # Replace with function body.
 
 
@@ -17,5 +17,5 @@ func _on_opciones_pressed():
 
 
 func _on_modo_solo_pressed():
-	get_tree().change_scene_to_file("res://Escenas/ModoSolo.tscn")
+	get_tree().change_scene_to_file("res://Escenas/characterSelecton.tscn")
 	pass # Replace with function body.

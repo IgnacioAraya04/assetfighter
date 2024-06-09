@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0wxb01v68vn4"]
+
+[ext_resource type="Texture2D" uid="uid://6nymtq3ts45i" path="res://Assets a Usar/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="1_nv1kb"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(480, 269)
+texture = ExtResource("1_nv1kb")
