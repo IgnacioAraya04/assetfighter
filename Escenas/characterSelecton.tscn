@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1a2i2gxt53ob" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/fire_knight.png" id="3_vn1uc"]
 [ext_resource type="Texture2D" uid="uid://dc4g8pkuunqxt" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/metal_bladekeeper.png" id="4_75ajd"]
 [ext_resource type="Texture2D" uid="uid://cl42wsi5m2ss" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/wind_hashashin.png" id="5_gc4xb"]
-[ext_resource type="Texture2D" uid="uid://iljvupfnbhdh" path="res://Assets a Usar/Individual Sprites/adventurer-idle-02.png" id="6_eg2k3"]
+[ext_resource type="Texture2D" uid="uid://iljvupfnbhdh" path="res://Assets a Usar/Individual Sprites - copia/adventurer-idle-02.png" id="6_eg2k3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

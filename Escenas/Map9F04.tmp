@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://cl5h7xhnhxnim"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_46s4b"]
+[ext_resource type="Texture2D" uid="uid://boqgbvpawdfrn" path="res://Assets a Usar/Mapita.png" id="2_8sy2t"]
+[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="3_h2ch8"]
+[ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_yysjp"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_8146j"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_nq4lc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
+size = Vector2(190.793, 28.621)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfm31"]
+size = Vector2(39.9683, 944.382)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndbg1"]
+size = Vector2(1607.91, 37.5387)
+
+[node name="CoopNormal" type="StaticBody2D"]
+scale = Vector2(1.67633, 1.70669)
+script = ExtResource("1_46s4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.77232, -65.6241)
+scale = Vector2(0.402161, 0.402161)
+texture = ExtResource("2_8sy2t")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4.77232, 42.1869)
+polygon = PackedVector2Array(195.666, 407.807, 968.783, 407.807, 968.783, 567.18, 195.666, 567.18)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(959.238, 304.683)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(186.171, 304.683)
+shape = SubResource("RectangleShape2D_uyor7")
+one_way_collision = true
+
+[node name="Assasin" parent="." instance=ExtResource("3_h2ch8")]
+position = Vector2(238.617, 323.433)
+scale = Vector2(2.0078, 2.0078)
+
+[node name="Windman" parent="." instance=ExtResource("4_yysjp")]
+position = Vector2(925.832, 299.996)
+scale = Vector2(2.33592, 2.33592)
+
+[node name="MenuPausa" parent="." instance=ExtResource("5_8146j")]
+visible = false
+offset_left = 496.322
+offset_top = 257.809
+offset_right = 496.322
+offset_bottom = 257.809
+scale = Vector2(1.22697, 1.22697)
+
+[node name="Blastzones" type="Area2D" parent="." groups=["muelte"]]
+position = Vector2(0.596541, 0.58593)
+collision_layer = 2
+collision_mask = 2
+
+[node name="blastzone_der" type="CollisionShape2D" parent="Blastzones"]
+position = Vector2(-130.643, 253.776)
+shape = SubResource("RectangleShape2D_qfm31")
+
+[node name="blastzone_izq" type="CollisionShape2D" parent="Blastzones"]
+position = Vector2(1349.97, 248.434)
+shape = SubResource("RectangleShape2D_qfm31")
+
+[node name="blastzone_up" type="CollisionShape2D" parent="Blastzones"]
+position = Vector2(602.507, -226.169)
+shape = SubResource("RectangleShape2D_ndbg1")
+
+[node name="blastzone_down" type="CollisionShape2D" parent="Blastzones"]
+position = Vector2(576.855, 717.178)
+shape = SubResource("RectangleShape2D_ndbg1")
+
+[node name="Ganador2" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 262.478
+offset_top = 281.246
+offset_right = 897.478
+offset_bottom = 342.246
+theme_override_fonts/normal_font = ExtResource("6_nq4lc")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Ganador [wave][shake][rainbow] Jugador 2"
+
+[node name="Ganador1" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 262.478
+offset_top = 281.246
+offset_right = 897.478
+offset_bottom = 342.246
+theme_override_fonts/normal_font = ExtResource("6_nq4lc")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Ganador [wave][shake][rainbow] Jugador 1"

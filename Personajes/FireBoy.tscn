@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cha044gfomqug"]
+[gd_scene load_steps=80 format=3 uid="uid://cha044gfomqug"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/adventurer.gd" id="1_tn4bk"]
 [ext_resource type="Texture2D" uid="uid://bt7lnaylhwkg6" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/05_1_atk/1_atk_1.png" id="2_aq1sb"]
@@ -13,22 +13,40 @@
 [ext_resource type="Texture2D" uid="uid://dkhhycqng8mie" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/05_1_atk/1_atk_10.png" id="11_vnkdc"]
 [ext_resource type="Texture2D" uid="uid://bdio86rmmffak" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/05_1_atk/1_atk_11.png" id="12_nhlod"]
 [ext_resource type="Texture2D" uid="uid://wgrpv6cc2ni7" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump_down/jump_down_1.png" id="13_c2uv3"]
+[ext_resource type="Texture2D" uid="uid://bhsf2jg5o036p" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_1.png" id="13_y35tc"]
 [ext_resource type="Texture2D" uid="uid://h823bjpk3eog" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump_down/jump_down_2.png" id="14_jsaxx"]
+[ext_resource type="Texture2D" uid="uid://5v8bcsychjof" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_2.png" id="14_vic6k"]
+[ext_resource type="Texture2D" uid="uid://bhrpetxdmfic0" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_3.png" id="15_5yqrb"]
 [ext_resource type="Texture2D" uid="uid://cbyp1rdt6qj02" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump_down/jump_down_3.png" id="15_f5t5a"]
+[ext_resource type="Texture2D" uid="uid://dap4nbp8f14so" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_4.png" id="16_8d7lj"]
 [ext_resource type="Texture2D" uid="uid://mwp3nd5rk34f" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_1.png" id="16_xfrlv"]
+[ext_resource type="Texture2D" uid="uid://cqv7rsn1kbprx" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_5.png" id="17_o6aoc"]
 [ext_resource type="Texture2D" uid="uid://h500q1qeexlh" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_2.png" id="17_w7lsk"]
 [ext_resource type="Texture2D" uid="uid://c7m43etwda0e4" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_3.png" id="18_jrgd6"]
+[ext_resource type="Texture2D" uid="uid://dmbcnpdaufu4i" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_6.png" id="18_uiu3t"]
 [ext_resource type="Texture2D" uid="uid://baciw1hcce6s7" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_4.png" id="19_ijfkw"]
+[ext_resource type="Texture2D" uid="uid://cvgp6gqpg4wbb" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_7.png" id="19_xaos1"]
 [ext_resource type="Texture2D" uid="uid://bhj4ldngk467y" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_5.png" id="20_36i0x"]
+[ext_resource type="Texture2D" uid="uid://ph8k6np11f1p" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_8.png" id="20_agr03"]
 [ext_resource type="Texture2D" uid="uid://dhokpfgk1ruai" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/10_take_hit/take_hit_6.png" id="21_k1oq0"]
+[ext_resource type="Texture2D" uid="uid://ch5lp7sc34ff1" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_9.png" id="21_ygipi"]
+[ext_resource type="Texture2D" uid="uid://c0p3gbic5bbgc" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_10.png" id="22_5j4jc"]
 [ext_resource type="Texture2D" uid="uid://6qbhelwuxcfa" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_1.png" id="22_dq2pr"]
+[ext_resource type="Texture2D" uid="uid://dcghavvvidoar" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_11.png" id="23_1sqia"]
 [ext_resource type="Texture2D" uid="uid://b3y8vunbfd1tl" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_2.png" id="23_8uft1"]
+[ext_resource type="Texture2D" uid="uid://bth3rao1wytd5" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_12.png" id="24_rmpv5"]
 [ext_resource type="Texture2D" uid="uid://v7avo65l2mr" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_3.png" id="24_vlrpx"]
+[ext_resource type="Texture2D" uid="uid://b318m1qwgxkyx" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_13.png" id="25_hiokd"]
 [ext_resource type="Texture2D" uid="uid://clth4dolevqg0" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_4.png" id="25_y76i3"]
 [ext_resource type="Texture2D" uid="uid://d3l202v7aimc4" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_5.png" id="26_20j1b"]
+[ext_resource type="Texture2D" uid="uid://b5ptbaaojlqys" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_14.png" id="26_c5nx3"]
+[ext_resource type="Texture2D" uid="uid://cq1pvv1kbp8jd" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_15.png" id="27_lking"]
 [ext_resource type="Texture2D" uid="uid://d1bnscc3v5448" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_6.png" id="27_wk4a7"]
+[ext_resource type="Texture2D" uid="uid://db70ga0ocp326" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_16.png" id="28_a872p"]
 [ext_resource type="Texture2D" uid="uid://bpxuka2pb0irt" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_7.png" id="28_si2h7"]
 [ext_resource type="Texture2D" uid="uid://cdni7a8fr8457" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/01_idle/idle_8.png" id="29_83l4i"]
+[ext_resource type="Texture2D" uid="uid://dbjleknp314l8" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_17.png" id="29_up7nq"]
+[ext_resource type="Texture2D" uid="uid://mpc56p1x30ok" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/08_sp_atk/sp_atk_18.png" id="30_e785n"]
 [ext_resource type="Texture2D" uid="uid://ca1cldg7ad8ix" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump/jump_1.png" id="30_eo3im"]
 [ext_resource type="Texture2D" uid="uid://boehak5347qxe" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump/jump_2.png" id="31_qk2tg"]
 [ext_resource type="Texture2D" uid="uid://ceshmuc5bd0uo" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/png/fire_knight/03_jump/jump_3.png" id="32_efciv"]
@@ -96,6 +114,65 @@ animations = [{
 }],
 "loop": false,
 "name": &"ataque",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_y35tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vic6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5yqrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8d7lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o6aoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uiu3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xaos1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_agr03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ygipi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5j4jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1sqia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rmpv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hiokd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c5nx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lking")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_a872p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_up7nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_e785n")
+}],
+"loop": true,
+"name": &"ataqueESP",
 "speed": 10.0
 }, {
 "frames": [{
@@ -276,8 +353,8 @@ script = ExtResource("1_tn4bk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"ataque"
-frame = 4
+animation = &"ataqueESP"
+frame_progress = 0.66333
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 43)
