@@ -14,6 +14,7 @@ var daño = 15
 @onready var stock: int  = max_vida
 @export var posicion_inicialad = Vector2(399.683,208.005)
 
+
 @export var ID= 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,6 +23,7 @@ var lePegan = false
 var dobleSalto = false
 var knockback_direction = Vector2.ZERO
 var is_knocked_back = false
+var knockback_resistence = Vector2(5,5)
 
 func _ready():
 	if 	ID == 1 :
@@ -84,13 +86,12 @@ func _physics_process(delta):
 			position.y +=3	
 		# aplicar knockback
 		if is_knocked_back:
-			knockback_direction *= 3
+			knockback_direction *= 1.5
 			#añadir la fuerza del knockback a la velocidad
-			velocity += knockback_direction * (KNOCKBACK_FORCE+porcentaje)
-			# comprobar si el knockback ha terminado
-			if knockback_direction.length() < 10:
+			velocity += knockback_direction * ( 100)
+			if knockback_direction > knockback_resistence:
 				is_knocked_back = false
-	
+			
 		move_and_slide()	
 		
 		
@@ -148,17 +149,14 @@ func _physics_process(delta):
 			position.y +=3	
 		# aplicar knockback
 		if is_knocked_back:
-			knockback_direction *= 3
+			knockback_direction *= 1.5
 			#añadir la fuerza del knockback a la velocidad
-			velocity += knockback_direction * (KNOCKBACK_FORCE+porcentaje)
-			# comprobar si el knockback ha terminado
-			if knockback_direction.length() < 10:
-				is_knocked_back = false
-		
+			velocity += knockback_direction * ( 100)
+		if knockback_direction > knockback_resistence:
+			is_knocked_back = false
+	
 		move_and_slide()	
-
- 
-
+			
 @onready var timer: Timer = $Timer
 @onready var ganador1 = $"../Ganador1"
 
@@ -169,6 +167,7 @@ func _on_areadaño_area_entered(area):
 		#aplicar knockback
 		knockback_direction = global_position-area.global_position
 		knockback_direction = knockback_direction.normalized()
+		knockback_resistence += Vector2(1.5,1.5)
 		is_knocked_back = true
 		porcentaje += daño
 	if area.is_in_group("muelte"):
