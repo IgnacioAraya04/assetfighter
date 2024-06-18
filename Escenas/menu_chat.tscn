@@ -3,41 +3,50 @@
 [ext_resource type="Script" path="res://Carpeta de Scripts/menuChat.gd" id="1_77icx"]
 
 [node name="menuChat" type="Node2D"]
+position = Vector2(704, 680)
 script = ExtResource("1_77icx")
 
-[node name="Hostear" type="Button" parent="."]
+[node name="Host" type="Button" parent="."]
 offset_right = 80.0
 offset_bottom = 32.0
 text = "host"
+metadata/_edit_use_anchors_ = true
 
-[node name="botonEntrar" type="Button" parent="."]
+[node name="Join" type="Button" parent="."]
 offset_left = 80.0
 offset_right = 160.0
 offset_bottom = 32.0
 text = "Entrar"
+metadata/_edit_use_anchors_ = true
 
-[node name="Nombre" type="LineEdit" parent="."]
+[node name="Username" type="LineEdit" parent="."]
 offset_left = 160.0
 offset_right = 256.0
 offset_bottom = 32.0
 placeholder_text = "Nickname"
+metadata/_edit_use_anchors_ = true
 
-[node name="enviarMensaje" type="Button" parent="."]
+[node name="Send" type="Button" parent="."]
 offset_top = -64.0
 offset_right = 80.0
 offset_bottom = -32.0
 text = "Enviar"
+metadata/_edit_use_anchors_ = true
 
-[node name="mensaje" type="LineEdit" parent="."]
+[node name="Message" type="LineEdit" parent="."]
 offset_top = -96.0
 offset_right = 384.0
 offset_bottom = -64.0
 placeholder_text = "Mensaje"
+metadata/_edit_use_anchors_ = true
 
-[node name="historialDeMensajes" type="TextEdit" parent="."]
+[node name="Messages" type="TextEdit" parent="."]
 offset_top = -384.0
 offset_right = 384.0
 offset_bottom = -96.0
+editable = false
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Hostear" to="." method="_on_hostear_pressed"]
-[connection signal="pressed" from="botonEntrar" to="." method="_on_boton_entrar_pressed"]
+[connection signal="pressed" from="Host" to="." method="_on_hostear_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_boton_entrar_pressed"]
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]

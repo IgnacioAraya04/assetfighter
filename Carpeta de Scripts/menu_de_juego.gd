@@ -19,3 +19,8 @@ func _on_opciones_pressed():
 func _on_modo_solo_pressed():
 	get_tree().change_scene_to_file("res://Escenas/characterSelecton.tscn")
 	pass # Replace with function body.
+
+
+func _on_modo__pressed():
+	get_tree().change_scene_to_file("res://Escenas/ModoOnline.tscn")
+	pass # Replace with function body.

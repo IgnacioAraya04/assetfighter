@@ -321,7 +321,7 @@ visibility_layer = 2
 position = Vector2(0, 3.5)
 shape = SubResource("CapsuleShape2D_yccm7")
 
-[node name="areaataque" type="Area2D" parent="." groups=["ataquep2"]]
+[node name="areaataque" type="Area2D" parent="." groups=["ataque"]]
 position = Vector2(0, 41)
 collision_layer = 2
 collision_mask = 2
