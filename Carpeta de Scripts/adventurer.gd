@@ -24,6 +24,7 @@ var dobleSalto = false
 var knockback_direction = Vector2.ZERO
 var is_knocked_back = false
 var knockback_resistence = Vector2(5,5)
+var knockback_tiempo = 0
 
 func _ready():
 	if 	ID == 1 :
@@ -89,7 +90,11 @@ func _physics_process(delta):
 			knockback_direction *= 1.5
 			#añadir la fuerza del knockback a la velocidad
 			velocity += knockback_direction * ( 100)
-			if knockback_direction > knockback_resistence:
+			if knockback_direction < Vector2(0,0):
+				knockback_tiempo = knockback_direction * -1
+			else:
+				knockback_tiempo = knockback_direction 
+			if knockback_tiempo > knockback_resistence:
 				is_knocked_back = false
 			
 		move_and_slide()	
@@ -151,9 +156,13 @@ func _physics_process(delta):
 		if is_knocked_back:
 			knockback_direction *= 1.5
 			#añadir la fuerza del knockback a la velocidad
-			velocity += knockback_direction * ( 100)
-		if knockback_direction > knockback_resistence:
-			is_knocked_back = false
+			velocity += knockback_direction * (100)
+			if knockback_direction < Vector2(0,0):
+				knockback_tiempo = knockback_direction * -1
+			else:
+				knockback_tiempo = knockback_direction 
+			if knockback_tiempo > knockback_resistence:
+				is_knocked_back = false
 	
 		move_and_slide()	
 			

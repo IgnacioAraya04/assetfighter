@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bad8vlealhae6"]
 
-[ext_resource type="Script" path="res://Escenas/selectormapa.gd" id="1_is6lr"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/selectormapa.gd" id="1_is6lr"]
 [ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Assets a Usar/Sprite-0002.png" id="1_y015i"]
 [ext_resource type="Texture2D" uid="uid://6nymtq3ts45i" path="res://Assets a Usar/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="2_5nck2"]
 
