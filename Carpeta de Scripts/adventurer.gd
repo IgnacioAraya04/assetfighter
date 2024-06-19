@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 signal cambia_vida
 
-const KNOCKBACK_FORCE = 440
+const KNOCKBACK_FORCE = 600  # Aumentado para un knockback más fuerte
+const MIN_KNOCKBACK_FORCE = 200  # Valor mínimo para el knockback inicial
 const SPEED = 250.0
 const JUMP_VELOCITY = -600.0
 
@@ -13,7 +14,6 @@ var daño = 15
 @export var max_vida = 3 
 @onready var stock: int  = max_vida
 @export var posicion_inicialad = Vector2(399.683,208.005)
-
 
 @export var ID= 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -27,10 +27,11 @@ var knockback_resistence = Vector2(5,5)
 var knockback_tiempo = 0
 
 func _ready():
-	if 	ID == 1 :
+	if ID == 1:
 		global_position = posicion_inicialad
-	else: 
+	else:
 		global_position = Vector2(599.683,208.005)
+
 func _physics_process(delta):
 	# Add the gravity
 	if ID == 1:
@@ -85,20 +86,16 @@ func _physics_process(delta):
 			position.y -=3
 		if is_on_floor() and Input.is_action_pressed("ui_down"):
 			position.y +=3	
+
 		# aplicar knockback
 		if is_knocked_back:
-			knockback_direction *= 1.5
-			#añadir la fuerza del knockback a la velocidad
-			velocity += knockback_direction * ( 100)
-			if knockback_direction < Vector2(0,0):
-				knockback_tiempo = knockback_direction * -1
-			else:
-				knockback_tiempo = knockback_direction 
-			if knockback_tiempo > knockback_resistence:
+			# Modificar la fuerza del knockback para que sea parabólica
+			velocity += knockback_direction * knockback_tiempo * delta
+			knockback_tiempo -= delta
+			if knockback_tiempo <= 0:
 				is_knocked_back = false
-			
-		move_and_slide()	
 		
+		move_and_slide()
 		
 	if ID == 2:
 	# Get the input direction and handle the movement/deceleration.
@@ -152,45 +149,47 @@ func _physics_process(delta):
 			position.y -=3
 		if is_on_floor() and Input.is_action_pressed("joy_down"):
 			position.y +=3	
+		
 		# aplicar knockback
 		if is_knocked_back:
-			knockback_direction *= 1.5
-			#añadir la fuerza del knockback a la velocidad
-			velocity += knockback_direction * (100)
-			if knockback_direction < Vector2(0,0):
-				knockback_tiempo = knockback_direction * -1
-			else:
-				knockback_tiempo = knockback_direction 
-			if knockback_tiempo > knockback_resistence:
+			# Modificar la fuerza del knockback para que sea parabólica
+			velocity += knockback_direction * knockback_tiempo * delta
+			knockback_tiempo -= delta
+			if knockback_tiempo <= 0:
 				is_knocked_back = false
-	
-		move_and_slide()	
+		
+		move_and_slide()
 			
 @onready var timer: Timer = $Timer
 @onready var ganador1 = $"../Ganador1"
-
+var explosion = load("res://Particulas/explosion.tscn").instantiate()
 func _on_areadaño_area_entered(area):
 	if area.is_in_group("ataque"):
 		$AnimatedSprite2D.play("hurt")
 		lePegan= true
-		#aplicar knockback
-		knockback_direction = global_position-area.global_position
-		knockback_direction = knockback_direction.normalized()
-		knockback_resistence += Vector2(1.5,1.5)
+		# aplicar knockback
+		knockback_direction = global_position - area.global_position
+		knockback_direction = knockback_direction.normalized() * max(KNOCKBACK_FORCE, MIN_KNOCKBACK_FORCE)
+		knockback_direction.x *= 10  # Aumentar el componente X del knockback
+		knockback_direction.y *= 1.2  # Reducir el componente Y del knockback
+		knockback_resistence += Vector2(1.5, 1.5)
 		is_knocked_back = true
 		porcentaje += daño
+		# Definir el tiempo de knockback basado en el porcentaje de daño
+		knockback_tiempo = (porcentaje / peso)
 	if area.is_in_group("muelte"):
 		stock -= 1
 		cambia_vida.emit(stock)
 		is_knocked_back = false
 		porcentaje = 0 
-		if stock>0:
+		explosion.global_position = global_position
+		add_child(explosion)
+		if stock > 0:
 			tp()
 			is_knocked_back = false
 		else:
 			timer.start(3)
 			ganador1.show()
-			pass
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "hurt":
@@ -203,6 +202,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "airatack":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
+
 func tp():
 	global_position = posicion_inicialad
 	set_physics_process(true)
