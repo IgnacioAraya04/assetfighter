@@ -1,13 +1,21 @@
-[gd_scene load_steps=51 format=3 uid="uid://dpej2nlyn63xp"]
+[gd_scene load_steps=59 format=3 uid="uid://dpej2nlyn63xp"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/knight.gd" id="1_a3coe"]
 [ext_resource type="Texture2D" uid="uid://iuevbne706xn" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_1.png" id="2_ujlj7"]
+[ext_resource type="Texture2D" uid="uid://dmm22wlf0tet2" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk1.png" id="2_xljrj"]
 [ext_resource type="Texture2D" uid="uid://cpgbdh8od1n6j" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_2.png" id="3_4lfsk"]
+[ext_resource type="Texture2D" uid="uid://b4a2k8tmv47dk" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk2.png" id="3_b6ulv"]
+[ext_resource type="Texture2D" uid="uid://b50gu1orewjpi" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk3.png" id="4_imw8f"]
 [ext_resource type="Texture2D" uid="uid://dc7wbtqd5xrg2" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_3.png" id="4_smhd2"]
 [ext_resource type="Texture2D" uid="uid://dc1nip0krsg04" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_4.png" id="5_djo3q"]
+[ext_resource type="Texture2D" uid="uid://ccexda1f4ccue" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk4.png" id="5_v8b5k"]
+[ext_resource type="Texture2D" uid="uid://biobuuqt4q7wk" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk5.png" id="6_84h5y"]
 [ext_resource type="Texture2D" uid="uid://ctwfkmul4vokl" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_5.png" id="6_nqc8c"]
+[ext_resource type="Texture2D" uid="uid://c5ghw3v040pmx" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk6.png" id="7_017om"]
 [ext_resource type="Texture2D" uid="uid://fq8wnlbf1kc7" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/07_1_atk/07_1_atk_6.png" id="7_eirtf"]
 [ext_resource type="Texture2D" uid="uid://nnwuf1eaqnti" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/10_sp_atk/10_sp_atk_1.png" id="8_1251q"]
+[ext_resource type="Texture2D" uid="uid://b5mbime00vle3" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk7.png" id="8_ad77q"]
+[ext_resource type="Texture2D" uid="uid://c2ht8gusi7416" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/air_atk/air_atk8.png" id="9_qq4uv"]
 [ext_resource type="Texture2D" uid="uid://blt3wpenya8jr" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/10_sp_atk/10_sp_atk_2.png" id="9_vxtrv"]
 [ext_resource type="Texture2D" uid="uid://ce580lix50ltp" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/03_jump_down/03_jump_down_1.png" id="10_gyuad"]
 [ext_resource type="Texture2D" uid="uid://bn5jtvwsmsye1" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/PNG animations/10_sp_atk/10_sp_atk_3.png" id="10_x1jb3"]
@@ -49,6 +57,35 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_horlk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xljrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b6ulv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_imw8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8b5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_84h5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_017om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ad77q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qq4uv")
+}],
+"loop": false,
+"name": &"airatack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ujlj7")
@@ -106,7 +143,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_2q776")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataqueESP",
 "speed": 10.0
 }, {
@@ -237,15 +274,13 @@ script = ExtResource("1_a3coe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"ataque"
-frame = 5
-frame_progress = 1.0
+animation = &"ataqueESP"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 43.5)
 shape = SubResource("CapsuleShape2D_vxg7o")
 
-[node name="areadaño" type="Area2D" parent="."]
+[node name="areadaño" type="Area2D" parent="." groups=["daño"]]
 position = Vector2(0, 40)
 collision_layer = 2
 collision_mask = 2

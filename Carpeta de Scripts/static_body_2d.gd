@@ -24,7 +24,15 @@ func _ready():
 	PJ_P1.ID = 1
 	Pj_P2.ID = 2
 	
-
+	if givenplayer == str("res://Personajes/adventurer.tscn"):
+		PJ_P1.name_ = "adventurer"
+	else:
+			""
+	if givenoponent == str("res://Personajes/adventurer.tscn"):
+		Pj_P2.name_ = "adventurer"
+	else:
+			""
+	
 func SpawnChosenCharacters():
 
 	call_deferred("add_child", PJ_P1)	

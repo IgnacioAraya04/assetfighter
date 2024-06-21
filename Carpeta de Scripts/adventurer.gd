@@ -13,9 +13,11 @@ var daño = 15
 
 @export var max_vida = 3 
 @onready var stock: int  = max_vida
+@onready var MAGIC = load("res://Particulas/fireball(adventurer).tscn")
 @export var posicion_inicialad = Vector2(399.683,208.005)
 
 @export var ID= 0
+@export var name_= ""
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAtacking = false
@@ -31,7 +33,7 @@ func _ready():
 		global_position = posicion_inicialad
 	else:
 		global_position = Vector2(599.683,208.005)
-
+		
 func _physics_process(delta):
 	# Add the gravity
 	if ID == 1:
@@ -63,7 +65,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("ui_up") and dobleSalto == false:
 				velocity.y = JUMP_VELOCITY
 				dobleSalto = true
-			if Input.is_action_just_pressed("attackp2"):
+			if Input.is_action_just_pressed("attackp1"):
 				isAtacking= true
 				$areaataque/colisionataque.disabled = false
 				$AnimatedSprite2D.play("airatack")
@@ -77,10 +79,16 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("jump")
 			velocity.y = JUMP_VELOCITY
 		
-		if Input.is_action_just_pressed("attackp2") and is_on_floor() and lePegan == false:
+		if Input.is_action_just_pressed("attackp1") and is_on_floor() and lePegan == false:
 			isAtacking= true
 			$areaataque/colisionataque.disabled = false
 			$AnimatedSprite2D.play("ataque")
+		if Input.is_action_just_pressed("attackESP") and lePegan == false:
+			isAtacking= true
+			$areaataque/colisionataque.disabled = false
+			$AnimatedSprite2D.play("ataqueESP")
+			if name_ == "adventurer":
+				WizardTime()
 
 		if is_on_floor() and Input.is_action_pressed("pause"):
 			position.y -=3
@@ -144,6 +152,12 @@ func _physics_process(delta):
 			isAtacking= true
 			$areaataque/colisionataque.disabled = false
 			$AnimatedSprite2D.play("ataque")
+		if Input.is_action_just_pressed("joy_ESP") and lePegan == false:
+			isAtacking= true
+			$areaataque/colisionataque.disabled = false
+			$AnimatedSprite2D.play("ataqueESP")
+			if $CharacterBody2D.name == "adventurer":
+				print("magicshit")
 
 		if is_on_floor() and Input.is_action_pressed("joy_pause"):
 			position.y -=3
@@ -204,6 +218,9 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "airatack":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
+	if $AnimatedSprite2D.animation == "ataqueESP":
+		$areaataque/colisionataque.disabled = true
+		isAtacking = false
 
 func tp():
 	global_position = posicion_inicialad
@@ -213,3 +230,12 @@ func _on_timer_timeout():
 	ganador1.hide()
 	get_tree().change_scene_to_file("res://Escenas/main.tscn")
 	pass # Replace with function body.
+func WizardTime():
+	if MAGIC:
+		var magic = MAGIC.instantiate()
+		add_child(magic)
+		magic.global_position = self.global_position
+		if $AnimatedSprite2D.flip_h == true:
+			magic.rotate(PI)
+		else:
+			pass

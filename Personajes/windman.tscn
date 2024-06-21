@@ -1,13 +1,20 @@
-[gd_scene load_steps=68 format=3 uid="uid://k27chwl4c04"]
+[gd_scene load_steps=75 format=3 uid="uid://k27chwl4c04"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/adventurer.gd" id="1_c0rbh"]
+[ext_resource type="Texture2D" uid="uid://duelmnrkp33pf" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_1.png" id="2_gs5md"]
 [ext_resource type="Texture2D" uid="uid://dwyqjgaju6gw1" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_1.png" id="2_jcdfk"]
+[ext_resource type="Texture2D" uid="uid://cegbr7iwhwrgj" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_2.png" id="3_5v0x6"]
 [ext_resource type="Texture2D" uid="uid://b3yiwweptshir" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_2.png" id="3_72ekn"]
 [ext_resource type="Texture2D" uid="uid://b4dn0t4wsr0xr" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_3.png" id="4_kogjf"]
+[ext_resource type="Texture2D" uid="uid://ded44lvlft5go" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_3.png" id="4_m3d0p"]
 [ext_resource type="Texture2D" uid="uid://d0cwgj8j1tgc5" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_4.png" id="5_1x7bv"]
+[ext_resource type="Texture2D" uid="uid://dknh3e8i4su2g" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_4.png" id="5_xbbf8"]
+[ext_resource type="Texture2D" uid="uid://cpa802hsstqu5" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_5.png" id="6_d8lj2"]
 [ext_resource type="Texture2D" uid="uid://b78e7igekpce6" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_5.png" id="6_w4gi6"]
 [ext_resource type="Texture2D" uid="uid://cgshmhps3ujc5" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_6.png" id="7_manes"]
+[ext_resource type="Texture2D" uid="uid://npi0py0pvie3" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_6.png" id="7_r6q5r"]
 [ext_resource type="Texture2D" uid="uid://bhqm8a4xfh8hj" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_7.png" id="8_1iqgr"]
+[ext_resource type="Texture2D" uid="uid://bkd1oq1ei34v0" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/air_atk/air_atk_7.png" id="8_3e1hi"]
 [ext_resource type="Texture2D" uid="uid://guhpx255woac" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_8.png" id="9_5udel"]
 [ext_resource type="Texture2D" uid="uid://d1u881yfbu20b" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/3_atk/3_atk_1.png" id="10_kpito"]
 [ext_resource type="Texture2D" uid="uid://d1wum36nctrgh" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/PNG/j_down/j_down_1.png" id="10_o68f0"]
@@ -66,6 +73,32 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_horlk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gs5md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5v0x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m3d0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xbbf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d8lj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r6q5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3e1hi")
+}],
+"loop": false,
+"name": &"airatack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_jcdfk")
@@ -174,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("35_6snaj")
 }],
-"loop": true,
+"loop": false,
 "name": &"ataqueESP",
 "speed": 10.0
 }, {
@@ -304,13 +337,12 @@ script = ExtResource("1_c0rbh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
 animation = &"ataqueESP"
-frame_progress = 0.2692
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 43.5)
 shape = SubResource("CapsuleShape2D_vxg7o")
 
-[node name="areadaño" type="Area2D" parent="."]
+[node name="areadaño" type="Area2D" parent="." groups=["daño"]]
 position = Vector2(0, 40)
 collision_layer = 2
 collision_mask = 2

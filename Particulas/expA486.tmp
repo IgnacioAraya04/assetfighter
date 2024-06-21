@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://d182qjainfxwq"]
+
+[sub_resource type="Gradient" id="Gradient_abnip"]
+offsets = PackedFloat32Array(0, 0.996047)
+colors = PackedColorArray(0.995572, 0.679368, 0.209701, 1, 1, 0.15769, 0.0922561, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m0oo5"]
+gradient = SubResource("Gradient_abnip")
+
+[sub_resource type="Curve" id="Curve_hjhno"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.245283), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_c7er6"]
+curve = SubResource("Curve_hjhno")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_75lqw"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 100.0
+scale_max = 100.0
+scale_curve = SubResource("CurveTexture_c7er6")
+color_ramp = SubResource("GradientTexture1D_m0oo5")
+
+[node name="Explosion" type="GPUParticles2D"]
+position = Vector2(959, 559)
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_75lqw")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
