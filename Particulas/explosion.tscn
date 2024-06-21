@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://d182qjainfxwq"]
+[gd_scene load_steps=7 format=3 uid="uid://d182qjainfxwq"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/explosion.gd" id="1_kmmwg"]
 
 [sub_resource type="Gradient" id="Gradient_abnip"]
 offsets = PackedFloat32Array(0, 0.996047)
@@ -20,8 +22,8 @@ spread = 180.0
 initial_velocity_min = 300.0
 initial_velocity_max = 1000.0
 gravity = Vector3(0, 0, 0)
-scale_min = 100.0
-scale_max = 100.0
+scale_min = 30.0
+scale_max = 60.0
 scale_curve = SubResource("CurveTexture_c7er6")
 color_ramp = SubResource("GradientTexture1D_m0oo5")
 
@@ -32,3 +34,4 @@ process_material = SubResource("ParticleProcessMaterial_75lqw")
 lifetime = 3.0
 explosiveness = 1.0
 fixed_fps = 60
+script = ExtResource("1_kmmwg")

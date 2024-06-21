@@ -162,7 +162,8 @@ func _physics_process(delta):
 			
 @onready var timer: Timer = $Timer
 @onready var ganador1 = $"../Ganador1"
-var explosion = load("res://Particulas/explosion.tscn").instantiate()
+var explosion = preload("res://Particulas/explosion.tscn")
+
 func _on_areadaño_area_entered(area):
 	if area.is_in_group("ataque"):
 		$AnimatedSprite2D.play("hurt")
@@ -178,12 +179,13 @@ func _on_areadaño_area_entered(area):
 		# Definir el tiempo de knockback basado en el porcentaje de daño
 		knockback_tiempo = (porcentaje / peso)
 	if area.is_in_group("muelte"):
+		var efectoMuerte = explosion.instantiate()
+		add_child(efectoMuerte)
+		efectoMuerte.global_position = global_position
 		stock -= 1
 		cambia_vida.emit(stock)
 		is_knocked_back = false
 		porcentaje = 0 
-		explosion.global_position = global_position
-		add_child(explosion)
 		if stock > 0:
 			tp()
 			is_knocked_back = false
