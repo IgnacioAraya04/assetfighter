@@ -1,8 +1,6 @@
 extends Control
 
 
-@onready var gridContainer = get_parent().get_node("GridContainer")
-
 
 
 func _on_woods_pressed():

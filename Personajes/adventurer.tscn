@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cy60l2jytj4qu" path="res://Assets a Usar/Individual Sprites - copia/adventurer-attack2-04.png" id="5_hysnf"]
 [ext_resource type="Texture2D" uid="uid://8sbagnl8cdpy" path="res://Assets a Usar/Individual Sprites - copia/adventurer-hurt-02.png" id="5_xwcrm"]
 [ext_resource type="Texture2D" uid="uid://do67tsf86spq6" path="res://Assets a Usar/Individual Sprites - copia/adventurer-attack2-05.png" id="6_0xnln"]
-[ext_resource type="Texture2D" uid="uid://x01y3xmjxhst" path="res://Assets a Usar/Individual Sprites/adventurer-cast-00.png" id="11_57e88"]
-[ext_resource type="Texture2D" uid="uid://cwb26gbw6l57j" path="res://Assets a Usar/Individual Sprites/adventurer-cast-01.png" id="12_3cvjc"]
-[ext_resource type="Texture2D" uid="uid://g3cxeti6pcdb" path="res://Assets a Usar/Individual Sprites/adventurer-cast-02.png" id="13_4ea0l"]
-[ext_resource type="Texture2D" uid="uid://bo66xr8fgably" path="res://Assets a Usar/Individual Sprites/adventurer-cast-03.png" id="14_svflh"]
+[ext_resource type="Texture2D" uid="uid://x01y3xmjxhst" path="res://Assets a Usar/Individual Sprites - copia/adventurer-cast-00.png" id="11_57e88"]
+[ext_resource type="Texture2D" uid="uid://cwb26gbw6l57j" path="res://Assets a Usar/Individual Sprites - copia/adventurer-cast-01.png" id="12_3cvjc"]
+[ext_resource type="Texture2D" uid="uid://g3cxeti6pcdb" path="res://Assets a Usar/Individual Sprites - copia/adventurer-cast-02.png" id="13_4ea0l"]
+[ext_resource type="Texture2D" uid="uid://bo66xr8fgably" path="res://Assets a Usar/Individual Sprites - copia/adventurer-cast-03.png" id="14_svflh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1i8wb"]
 atlas = ExtResource("2_ijsfd")
@@ -91,7 +91,7 @@ animations = [{
 "texture": ExtResource("5_4tvha")
 }],
 "loop": false,
-"name": &"airatack",
+"name": &"airattack",
 "speed": 10.0
 }, {
 "frames": [{
@@ -221,9 +221,7 @@ script = ExtResource("1_j18bi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
-animation = &"ataqueESP"
-frame = 3
-frame_progress = 1.0
+animation = &"airattack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2

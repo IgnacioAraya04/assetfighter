@@ -1,10 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuvwlm1c668y1"]
+[gd_scene load_steps=18 format=3 uid="uid://cuvwlm1c668y1"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/characterSelectonl.gd" id="1_hs376"]
 [ext_resource type="Texture2D" uid="uid://b1a2i2gxt53ob" path="res://Assets a Usar/Elementals_fire_knight_FREE_v1.1/fire_knight.png" id="3_vn1uc"]
 [ext_resource type="Texture2D" uid="uid://dc4g8pkuunqxt" path="res://Assets a Usar/Elementals_metal_bladekeeper_FREE_v1.1/metal_bladekeeper.png" id="4_75ajd"]
 [ext_resource type="Texture2D" uid="uid://cl42wsi5m2ss" path="res://Assets a Usar/elementals_wind_hashashin_FREE_v1.1/wind_hashashin.png" id="5_gc4xb"]
+[ext_resource type="Texture2D" uid="uid://cei41e0cgd7rj" path="res://Assets a Usar/Elementals_Crystal_Mauler_Free_v1.0/crystal_mauler.png" id="6_cwowe"]
 [ext_resource type="Texture2D" uid="uid://iljvupfnbhdh" path="res://Assets a Usar/Individual Sprites - copia/adventurer-idle-02.png" id="6_eg2k3"]
+[ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="6_jwhfx"]
+[ext_resource type="Texture2D" uid="uid://wbsp820n20uj" path="res://Assets a Usar/Elementals_ground_monk_FREE_v1.3/ground_monk.png" id="7_6yls5"]
+[ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="7_na53o"]
+[ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="8_82bgb"]
+[ext_resource type="Texture2D" uid="uid://be2uwvx3ejy86" path="res://Assets a Usar/Elementals_water_priestess_FREE_v1.1/water_priestess.png" id="8_ahtj3"]
+[ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="9_47tjx"]
+[ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="10_kamqa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r4p3g"]
+shader = ExtResource("6_jwhfx")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfy48"]
+shader = ExtResource("6_jwhfx")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fmvw"]
+shader = ExtResource("6_jwhfx")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wirji"]
+shader = ExtResource("6_jwhfx")
+shader_parameter/scroll_speed = 0.1
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -23,7 +47,6 @@ position = Vector2(315, 214)
 scale = Vector2(2.15625, 2.15625)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 anchor_mode = 0
 zoom = Vector2(2.5, 2.5)
 
@@ -55,10 +78,72 @@ layout_mode = 2
 icon = ExtResource("5_gc4xb")
 
 [node name="Adventurer" type="Button" parent="GridContainer"]
+visible = false
 layout_mode = 2
 icon = ExtResource("6_eg2k3")
+
+[node name="crystalWarrior" type="Button" parent="GridContainer" groups=["characters"]]
+layout_mode = 2
+icon = ExtResource("6_cwowe")
+
+[node name="groundMonk" type="Button" parent="GridContainer" groups=["characters"]]
+layout_mode = 2
+icon = ExtResource("7_6yls5")
+
+[node name="waterPrincess" type="Button" parent="GridContainer" groups=["characters"]]
+layout_mode = 2
+icon = ExtResource("8_ahtj3")
+
+[node name="Fondo Inicio" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_r4p3g")
+position = Vector2(-116.136, -71.64)
+scale = Vector2(0.767462, 0.834198)
+texture = ExtResource("7_na53o")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kfy48")
+position = Vector2(-113.683, -70.14)
+scale = Vector2(0.77598, 0.843457)
+texture = ExtResource("8_82bgb")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7fmvw")
+position = Vector2(-113.683, -70.14)
+scale = Vector2(0.77598, 0.843457)
+texture = ExtResource("9_47tjx")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wirji")
+position = Vector2(-116.136, -71.64)
+scale = Vector2(0.767462, 0.834198)
+texture = ExtResource("10_kamqa")
 
 [connection signal="pressed" from="GridContainer/FireKnight" to="." method="_on_fire_knight_pressed"]
 [connection signal="pressed" from="GridContainer/BladeKeeper" to="." method="_on_blade_keeper_pressed"]
 [connection signal="pressed" from="GridContainer/WindGuy" to="." method="_on_wind_guy_pressed"]
 [connection signal="pressed" from="GridContainer/Adventurer" to="." method="_on_adventurer_pressed"]
+[connection signal="pressed" from="GridContainer/crystalWarrior" to="." method="_on_crystal_warrior_pressed"]
+[connection signal="pressed" from="GridContainer/groundMonk" to="." method="_on_ground_monk_pressed"]
+[connection signal="pressed" from="GridContainer/waterPrincess" to="." method="_on_water_princess_pressed"]

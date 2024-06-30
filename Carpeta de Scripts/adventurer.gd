@@ -68,7 +68,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("attackp1"):
 				isAtacking= true
 				$areaataque/colisionataque.disabled = false
-				$AnimatedSprite2D.play("airatack")
+				$AnimatedSprite2D.play("airattack")
 
 		
 		if is_on_floor():
@@ -137,7 +137,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("joy_attack"):
 				isAtacking= true
 				$areaataque/colisionataque.disabled = false
-				$AnimatedSprite2D.play("airatack")
+				$AnimatedSprite2D.play("airattack")
 
 		
 		if is_on_floor():
@@ -215,7 +215,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "ataque":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
-	if $AnimatedSprite2D.animation == "airatack":
+	if $AnimatedSprite2D.animation == "airattack":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
 	if $AnimatedSprite2D.animation == "ataqueESP":

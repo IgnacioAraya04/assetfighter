@@ -83,7 +83,7 @@ animations = [{
 "texture": ExtResource("9_qq4uv")
 }],
 "loop": false,
-"name": &"airatack",
+"name": &"airattack",
 "speed": 10.0
 }, {
 "frames": [{
@@ -145,7 +145,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ataqueESP",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,11 +258,9 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxg7o"]
-radius = 11.0
 height = 45.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yccm7"]
-radius = 11.0
 height = 45.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2d20l"]
@@ -275,6 +273,8 @@ script = ExtResource("1_a3coe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_horlk")
 animation = &"ataqueESP"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 43.5)

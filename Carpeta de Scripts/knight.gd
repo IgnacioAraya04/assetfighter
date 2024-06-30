@@ -64,10 +64,10 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("ui_up") and dobleSalto == false:
 				velocity.y = JUMP_VELOCITY
 				dobleSalto = true
-			if Input.is_action_just_pressed("attackp2"):
+			if Input.is_action_just_pressed("attackp1"):
 				isAtacking= true
 				$areaataque/colisionataque.disabled = false
-				$AnimatedSprite2D.play("airatack")
+				$AnimatedSprite2D.play("airattack")
 
 		
 		if is_on_floor():
@@ -78,10 +78,14 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("jump")
 			velocity.y = JUMP_VELOCITY
 		
-		if Input.is_action_just_pressed("attackp2") and is_on_floor() and lePegan == false:
+		if Input.is_action_just_pressed("attackp1") and is_on_floor() and lePegan == false:
 			isAtacking= true
 			$areaataque/colisionataque.disabled = false
 			$AnimatedSprite2D.play("ataque")
+		if Input.is_action_just_pressed("attackESP") and lePegan == false:
+			isAtacking= true
+			$areaataque/colisionataque.disabled = false
+			$AnimatedSprite2D.play("ataqueESP")
 
 		if is_on_floor() and Input.is_action_pressed("pause"):
 			position.y -=3
@@ -130,7 +134,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("joy_attack"):
 				isAtacking= true
 				$areaataque/colisionataque.disabled = false
-				$AnimatedSprite2D.play("airatack")
+				$AnimatedSprite2D.play("airattack")
 
 		
 		if is_on_floor():
@@ -145,6 +149,10 @@ func _physics_process(delta):
 			isAtacking= true
 			$areaataque/colisionataque.disabled = false
 			$AnimatedSprite2D.play("ataque")
+		if Input.is_action_just_pressed("joy_ESP") and lePegan == false:
+			isAtacking= true
+			$areaataque/colisionataque.disabled = false
+			$AnimatedSprite2D.play("ataqueESP")
 
 		if is_on_floor() and Input.is_action_pressed("joy_pause"):
 			position.y -=3
@@ -202,9 +210,14 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "ataque":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
-	if $AnimatedSprite2D.animation == "airatack":
+	if $AnimatedSprite2D.animation == "airattack":
 		$areaataque/colisionataque.disabled = true
 		isAtacking = false
+	if $AnimatedSprite2D.animation == "ataqueESP":
+		$areaataque/colisionataque.disabled = true
+		isAtacking = false
+		
+	
 func tp():
 	global_position = posicion_inicialad
 	set_physics_process(true)

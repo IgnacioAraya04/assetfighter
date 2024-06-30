@@ -4,7 +4,6 @@ extends Control
 var characters = []
 var playeroneselected = false
 
-@onready var gridContainer = get_parent().get_node("GridContainer")
 
 func _ready():
 	for nameOfCharacter in get_tree().get_nodes_in_group("Charactes"):
@@ -46,5 +45,34 @@ func _on_adventurer_pressed():
 		playeroneselected = true
 	else:
 		CharacterSelectionManager.oponent = CharacterSelectionManager.selectableCharacters["Adventurer"]
+		playeroneselected = false
+		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
+
+func _on_crystal_warrior_pressed():
+	if playeroneselected ==false:
+		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["crystalWarrior"]
+		playeroneselected = true
+	else:
+		CharacterSelectionManager.oponent = CharacterSelectionManager.selectableCharacters["crystalWarrior"]
+		playeroneselected = false
+		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
+
+
+func _on_ground_monk_pressed():
+	if playeroneselected ==false:
+		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["groundMonk"]
+		playeroneselected = true
+	else:
+		CharacterSelectionManager.oponent = CharacterSelectionManager.selectableCharacters["groundMonk"]
+		playeroneselected = false
+		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
+
+
+func _on_water_princess_pressed():
+	if playeroneselected ==false:
+		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["waterPrincess"]
+		playeroneselected = true
+	else:
+		CharacterSelectionManager.oponent = CharacterSelectionManager.selectableCharacters["waterPrincess"]
 		playeroneselected = false
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
