@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cliay0vitmb5j"]
+[gd_scene load_steps=10 format=3 uid="uid://dbe0hhqvq1ks6"]
 
-[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_46s4b"]
-[ext_resource type="Texture2D" uid="uid://boqgbvpawdfrn" path="res://Assets a Usar/Mapita.png" id="2_8sy2t"]
-[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="3_h2ch8"]
-[ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_yysjp"]
-[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_8146j"]
-[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_nq4lc"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_pnb6x"]
+[ext_resource type="Texture2D" uid="uid://boqgbvpawdfrn" path="res://Assets a Usar/Mapita.png" id="2_1txdd"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="3_v2hv8"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="4_3nk50"]
+[ext_resource type="PackedScene" uid="uid://1rr1vxum5bd1" path="res://UI/Vidas/vidas_P1.tscn" id="5_4x2m2"]
+[ext_resource type="PackedScene" uid="uid://c5yhfsj8pf8bj" path="res://UI/Vidas/vidas_P2.tscn" id="6_83lwl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4o5y"]
 size = Vector2(190.793, 28.621)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfm31"]
@@ -17,13 +17,14 @@ size = Vector2(39.9683, 944.382)
 size = Vector2(1607.91, 37.5387)
 
 [node name="CoopNormal" type="StaticBody2D"]
+position = Vector2(0, 1)
 scale = Vector2(1.67633, 1.70669)
-script = ExtResource("1_46s4b")
+script = ExtResource("1_pnb6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.77232, -65.6241)
 scale = Vector2(0.402161, 0.402161)
-texture = ExtResource("2_8sy2t")
+texture = ExtResource("2_1txdd")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -32,23 +33,15 @@ polygon = PackedVector2Array(195.666, 407.807, 968.783, 407.807, 968.783, 567.18
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(959.238, 304.683)
-shape = SubResource("RectangleShape2D_uyor7")
+shape = SubResource("RectangleShape2D_u4o5y")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(186.171, 304.683)
-shape = SubResource("RectangleShape2D_uyor7")
+shape = SubResource("RectangleShape2D_u4o5y")
 one_way_collision = true
 
-[node name="Assasin" parent="." instance=ExtResource("3_h2ch8")]
-position = Vector2(238.617, 323.433)
-scale = Vector2(2.0078, 2.0078)
-
-[node name="Windman" parent="." instance=ExtResource("4_yysjp")]
-position = Vector2(925.832, 299.996)
-scale = Vector2(2.33592, 2.33592)
-
-[node name="MenuPausa" parent="." instance=ExtResource("5_8146j")]
+[node name="MenuPausa" parent="." instance=ExtResource("3_v2hv8")]
 visible = false
 offset_left = 496.322
 offset_top = 257.809
@@ -77,24 +70,38 @@ shape = SubResource("RectangleShape2D_ndbg1")
 position = Vector2(576.855, 717.178)
 shape = SubResource("RectangleShape2D_ndbg1")
 
-[node name="Ganador2" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 262.478
-offset_top = 281.246
-offset_right = 897.478
-offset_bottom = 342.246
-theme_override_fonts/normal_font = ExtResource("6_nq4lc")
-theme_override_font_sizes/normal_font_size = 70
-bbcode_enabled = true
-text = "Ganador [wave][shake][rainbow] Jugador 2"
-
 [node name="Ganador1" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 262.478
 offset_top = 281.246
 offset_right = 897.478
 offset_bottom = 342.246
-theme_override_fonts/normal_font = ExtResource("6_nq4lc")
+theme_override_fonts/normal_font = ExtResource("4_3nk50")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Ganador [wave][shake][rainbow] Jugador 1"
+
+[node name="Ganador2" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 262.478
+offset_top = 281.246
+offset_right = 897.478
+offset_bottom = 342.246
+theme_override_fonts/normal_font = ExtResource("4_3nk50")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Ganador [wave][shake][rainbow] Jugador 2"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vidas_P1" parent="UI" instance=ExtResource("5_4x2m2")]
+offset_left = 473.0
+offset_top = 985.0
+offset_right = 774.0
+offset_bottom = 1105.0
+
+[node name="Vidas_P2" parent="UI" instance=ExtResource("6_83lwl")]
+offset_left = 1219.0
+offset_top = 984.0
+offset_right = 1517.0
+offset_bottom = 1101.0

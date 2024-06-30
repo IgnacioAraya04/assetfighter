@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bad8vlealhae6"]
+[gd_scene load_steps=15 format=3 uid="uid://bad8vlealhae6"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/selectormapa.gd" id="1_is6lr"]
 [ext_resource type="Texture2D" uid="uid://rn5cj3je70lx" path="res://Assets a Usar/Sprite-0002.png" id="1_y015i"]
-[ext_resource type="Texture2D" uid="uid://6nymtq3ts45i" path="res://Assets a Usar/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="2_5nck2"]
+[ext_resource type="Texture2D" uid="uid://d03bv0losu58s" path="res://Assets a Usar/Portada Mapas/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="2_pskeb"]
+[ext_resource type="Texture2D" uid="uid://d1038d6qhwjfv" path="res://Assets a Usar/Portada Mapas/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="3_notnp"]
+[ext_resource type="Texture2D" uid="uid://dlj7wepgvsjv8" path="res://Assets a Usar/Portada Mapas/Mapita.png" id="4_13neo"]
 [ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="4_61u8b"]
 [ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="5_38cf5"]
 [ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="6_7vnkh"]
@@ -40,18 +42,26 @@ script = ExtResource("1_is6lr")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = -758.0
-offset_top = -255.0
-offset_right = 1179.0
-offset_bottom = 808.0
+offset_left = -512.0
+offset_top = -388.0
+offset_right = 1425.0
+offset_bottom = 675.0
 columns = 2
 
 [node name="woods" type="Button" parent="GridContainer"]
 layout_mode = 2
-icon = ExtResource("2_5nck2")
-icon_alignment = 1
+icon = ExtResource("2_pskeb")
+
+[node name="battlefield" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_notnp")
+
+[node name="mapita" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_13neo")
 
 [node name="plain" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(496, 387)
 layout_mode = 2
 icon = ExtResource("1_y015i")
 
@@ -102,4 +112,6 @@ scale = Vector2(1.84, 2)
 texture = ExtResource("8_nxynm")
 
 [connection signal="pressed" from="GridContainer/woods" to="." method="_on_woods_pressed"]
+[connection signal="pressed" from="GridContainer/battlefield" to="." method="_on_battlefield_pressed"]
+[connection signal="pressed" from="GridContainer/mapita" to="." method="_on_mapita_pressed"]
 [connection signal="pressed" from="GridContainer/plain" to="." method="_on_plain_pressed"]

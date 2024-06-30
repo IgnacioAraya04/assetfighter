@@ -1,29 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2gvlnogt3lcq"]
+[gd_scene load_steps=10 format=3 uid="uid://b7kc6crjda76r"]
 
-[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_bcb7q"]
-[ext_resource type="Texture2D" uid="uid://cgdstwtuqrfwa" path="res://Assets a Usar/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="2_vgbw8"]
-[ext_resource type="PackedScene" uid="uid://dpej2nlyn63xp" path="res://Personajes/Assasin.tscn" id="3_as8d4"]
-[ext_resource type="PackedScene" uid="uid://k27chwl4c04" path="res://Personajes/windman.tscn" id="4_wv3lh"]
-[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="5_8pupv"]
-[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_vu6ow"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_vow1m"]
+[ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="3_qg1to"]
+[ext_resource type="PackedScene" uid="uid://1rr1vxum5bd1" path="res://UI/Vidas/vidas_P1.tscn" id="4_aws2y"]
+[ext_resource type="PackedScene" uid="uid://c5yhfsj8pf8bj" path="res://UI/Vidas/vidas_P2.tscn" id="5_5gegw"]
+[ext_resource type="Texture2D" uid="uid://cgdstwtuqrfwa" path="res://Assets a Usar/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="6_3g8dp"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_d5uon"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u2cj"]
 size = Vector2(219.326, 28.621)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfm31"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3poh"]
 size = Vector2(39.9683, 944.382)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndbg1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6dji"]
 size = Vector2(1607.91, 37.5387)
 
 [node name="CoopNormal" type="StaticBody2D"]
 scale = Vector2(1.67633, 1.70669)
-script = ExtResource("1_bcb7q")
+script = ExtResource("1_vow1m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-116.326, -83.202)
 scale = Vector2(1.45, 1.45)
-texture = ExtResource("2_vgbw8")
+texture = ExtResource("6_3g8dp")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -31,28 +31,20 @@ polygon = PackedVector2Array(195.666, 407.807, 396.103, 408.979, 763.573, 408.97
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(804.138, 266.598)
-shape = SubResource("RectangleShape2D_uyor7")
+shape = SubResource("RectangleShape2D_4u2cj")
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(354.942, 266.598)
-shape = SubResource("RectangleShape2D_uyor7")
+shape = SubResource("RectangleShape2D_4u2cj")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(580.535, 111.327)
-shape = SubResource("RectangleShape2D_uyor7")
+shape = SubResource("RectangleShape2D_4u2cj")
 one_way_collision = true
 
-[node name="Assasin" parent="." instance=ExtResource("3_as8d4")]
-position = Vector2(233.844, 271.871)
-scale = Vector2(2.0078, 2.0078)
-
-[node name="Windman" parent="." instance=ExtResource("4_wv3lh")]
-position = Vector2(916.287, 257.809)
-scale = Vector2(2.33592, 2.33592)
-
-[node name="MenuPausa" parent="." instance=ExtResource("5_8pupv")]
+[node name="MenuPausa" parent="." instance=ExtResource("3_qg1to")]
 visible = false
 offset_left = 496.322
 offset_top = 257.809
@@ -67,19 +59,33 @@ collision_mask = 2
 
 [node name="blastzone_der" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(-130.643, 253.776)
-shape = SubResource("RectangleShape2D_qfm31")
+shape = SubResource("RectangleShape2D_u3poh")
 
 [node name="blastzone_izq" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(1349.97, 248.434)
-shape = SubResource("RectangleShape2D_qfm31")
+shape = SubResource("RectangleShape2D_u3poh")
 
 [node name="blastzone_up" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(602.507, -226.169)
-shape = SubResource("RectangleShape2D_ndbg1")
+shape = SubResource("RectangleShape2D_j6dji")
 
 [node name="blastzone_down" type="CollisionShape2D" parent="Blastzones"]
 position = Vector2(576.855, 717.178)
-shape = SubResource("RectangleShape2D_ndbg1")
+shape = SubResource("RectangleShape2D_j6dji")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vidas_P1" parent="UI" instance=ExtResource("4_aws2y")]
+offset_left = 473.0
+offset_top = 985.0
+offset_right = 774.0
+offset_bottom = 1105.0
+
+[node name="Vidas_P2" parent="UI" instance=ExtResource("5_5gegw")]
+offset_left = 1219.0
+offset_top = 984.0
+offset_right = 1517.0
+offset_bottom = 1101.0
 
 [node name="Ganador2" type="RichTextLabel" parent="."]
 visible = false
@@ -87,7 +93,7 @@ offset_left = 262.478
 offset_top = 281.246
 offset_right = 897.478
 offset_bottom = 342.246
-theme_override_fonts/normal_font = ExtResource("6_vu6ow")
+theme_override_fonts/normal_font = ExtResource("6_d5uon")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Ganador [wave][shake][rainbow] Jugador 2"
@@ -98,7 +104,7 @@ offset_left = 262.478
 offset_top = 281.246
 offset_right = 897.478
 offset_bottom = 342.246
-theme_override_fonts/normal_font = ExtResource("6_vu6ow")
+theme_override_fonts/normal_font = ExtResource("6_d5uon")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Ganador [wave][shake][rainbow] Jugador 1"
