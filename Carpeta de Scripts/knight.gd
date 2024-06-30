@@ -14,7 +14,7 @@ var daño = 15
 
 @export var max_vida = 3 
 @onready var stock: int  = max_vida
-@export var posicion_inicialad = Vector2(399.683,208.005)
+@export var posicion_inicialad = Vector2(465,209)
 
 
 @export var ID= 0
@@ -32,7 +32,8 @@ func _ready():
 	if ID == 1 :
 		global_position = posicion_inicialad
 	else: 
-		global_position = Vector2(599.683,208.005)
+		global_position = Vector2(1405,209)
+		
 func _physics_process(delta):
 	# Add the gravity
 	if ID == 1:
