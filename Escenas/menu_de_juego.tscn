@@ -91,28 +91,13 @@ icon = ExtResource("6_ejggk")
 flat = true
 icon_alignment = 1
 
-[node name="Contenedor Solo" type="VBoxContainer" parent="."]
+[node name="Contenedor Coop" type="VBoxContainer" parent="."]
 offset_left = 261.0
 offset_top = 331.0
 offset_right = 781.0
 offset_bottom = 479.0
 
-[node name="Modo Solo" type="Button" parent="Contenedor Solo"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_vfsi4")
-theme_override_font_sizes/font_size = 85
-text = "Solo"
-icon = ExtResource("6_ejggk")
-flat = true
-icon_alignment = 1
-
-[node name="Contenedor Coop" type="VBoxContainer" parent="."]
-offset_left = 1077.0
-offset_top = 331.0
-offset_right = 1597.0
-offset_bottom = 479.0
-
-[node name="Modo Cooperativo" type="Button" parent="Contenedor Coop"]
+[node name="Modo Coop" type="Button" parent="Contenedor Coop"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_vfsi4")
 theme_override_font_sizes/font_size = 85
@@ -121,17 +106,33 @@ icon = ExtResource("6_ejggk")
 flat = true
 icon_alignment = 1
 
-[node name="Contenedor ???" type="VBoxContainer" parent="."]
+[node name="Contenedor Online" type="VBoxContainer" parent="."]
+offset_left = 1077.0
+offset_top = 331.0
+offset_right = 1597.0
+offset_bottom = 479.0
+
+[node name="Modo Online" type="Button" parent="Contenedor Online"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vfsi4")
+theme_override_font_sizes/font_size = 85
+text = "Online
+"
+icon = ExtResource("6_ejggk")
+flat = true
+icon_alignment = 1
+
+[node name="Contenedor LeaderBoard" type="VBoxContainer" parent="."]
 offset_left = 1077.0
 offset_top = 624.0
 offset_right = 1597.0
 offset_bottom = 772.0
 
-[node name="Modo ???" type="Button" parent="Contenedor ???"]
+[node name="Tabla de puntuaciones" type="Button" parent="Contenedor LeaderBoard"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_vfsi4")
 theme_override_font_sizes/font_size = 85
-text = "???"
+text = "Puntajes"
 icon = ExtResource("7_jddtw")
 flat = true
 icon_alignment = 1
@@ -150,7 +151,6 @@ flat = true
 icon_alignment = 1
 
 [connection signal="pressed" from="Contenedor Opciones/Opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="Contenedor Solo/Modo Solo" to="." method="_on_modo_solo_pressed"]
-[connection signal="pressed" from="Contenedor Coop/Modo Cooperativo" to="." method="_on_modo_cooperativo_pressed"]
-[connection signal="pressed" from="Contenedor ???/Modo ???" to="." method="_on_modo__pressed"]
+[connection signal="pressed" from="Contenedor Coop/Modo Coop" to="." method="_on_modo_coop_pressed"]
+[connection signal="pressed" from="Contenedor LeaderBoard/Tabla de puntuaciones" to="." method="_on_tabla_de_puntuaciones_pressed"]
 [connection signal="pressed" from="Contenedor Regresar/Regresar" to="." method="_on_regresar_pressed"]
