@@ -386,6 +386,7 @@ radius = 8.0
 height = 40.0
 
 [node name="FireBoy" type="CharacterBody2D"]
+scale = Vector2(1.48314, 1.62553)
 script = ExtResource("1_tn4bk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

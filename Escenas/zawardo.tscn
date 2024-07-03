@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5j3cuonsryrh"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/zawardo.gd" id="1_v1tvt"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="2_q3ct1"]
+
+[node name="zawardo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_v1tvt")
+minutos = 0
+segundos = 10
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 287.0
+offset_top = 66.0
+offset_right = 382.0
+offset_bottom = 128.0
+scale = Vector2(5, 5)
+
+[node name="min" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 54.4286
+offset_top = 42.4286
+offset_right = 76.4286
+offset_bottom = 56.4286
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_q3ct1")
+text = "00"
+
+[node name="sec" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 71.5714
+offset_top = 41.5714
+offset_right = 97.5714
+offset_bottom = 54.5714
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_q3ct1")
+bbcode_enabled = true
+text = "00
+"
+tab_size = 0
+
+[node name="cuentaAtras" type="Timer" parent="Control"]
+autostart = true
+
+[connection signal="timeout" from="Control/cuentaAtras" to="." method="_on_cuenta_atras_timeout"]

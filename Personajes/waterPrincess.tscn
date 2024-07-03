@@ -317,7 +317,8 @@ height = 45.0
 radius = 8.0
 height = 40.0
 
-[node name="FireBoy" type="CharacterBody2D"]
+[node name="water princess" type="CharacterBody2D"]
+scale = Vector2(1.66488, 1.72637)
 script = ExtResource("1_40w4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

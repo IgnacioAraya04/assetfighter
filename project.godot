@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 CharacterSelectionManager="*res://Carpeta de Scripts/CharacterSelectionManager.gd"
+ModoOnline="*res://Carpeta de Scripts/modo_online.gd"
 
 [display]
 

@@ -2,6 +2,7 @@ extends Control
 
 @onready var juego = $".."
 
+
 func _on_continuar_pressed():
 	juego.menuPausar()
 	pass

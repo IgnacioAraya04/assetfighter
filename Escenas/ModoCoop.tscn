@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bduu7up835qbs"]
+[gd_scene load_steps=12 format=3 uid="uid://bduu7up835qbs"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_uj7m5"]
 [ext_resource type="Texture2D" uid="uid://6nymtq3ts45i" path="res://Assets a Usar/daniel-bernal-03a-pixel-melee-dreamland.jpg" id="2_e1mna"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_4ogya"]
 [ext_resource type="PackedScene" uid="uid://1rr1vxum5bd1" path="res://UI/Vidas/vidas_P1.tscn" id="6_d053i"]
 [ext_resource type="PackedScene" uid="uid://c5yhfsj8pf8bj" path="res://UI/Vidas/vidas_P2.tscn" id="7_2xrr8"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/labelPuntuacion.gd" id="7_cth3k"]
+[ext_resource type="PackedScene" uid="uid://c5j3cuonsryrh" path="res://Escenas/zawardo.tscn" id="8_rh6y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyor7"]
 size = Vector2(141.283, 23.4372)
@@ -107,3 +109,28 @@ theme_override_fonts/normal_font = ExtResource("6_4ogya")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Ganador [wave][shake][rainbow] Jugador 1"
+
+[node name="gen_target" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="zawardo" parent="." instance=ExtResource("8_rh6y4")]
+offset_left = 387.155
+offset_top = -254.879
+offset_right = 387.155
+offset_bottom = -254.879
+
+[node name="Label" type="Label" parent="."]
+offset_left = 916.287
+offset_top = 95.5065
+offset_right = 956.287
+offset_bottom = 117.507
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_colors/font_shadow_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_fonts/font = ExtResource("6_4ogya")
+text = "000"
+horizontal_alignment = 2
+script = ExtResource("7_cth3k")
+
+[connection signal="timeout" from="gen_target" to="." method="_on_gen_target_timeout"]

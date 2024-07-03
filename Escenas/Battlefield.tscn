@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7kc6crjda76r"]
+[gd_scene load_steps=12 format=3 uid="uid://b7kc6crjda76r"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_vow1m"]
 [ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="3_qg1to"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c5yhfsj8pf8bj" path="res://UI/Vidas/vidas_P2.tscn" id="5_5gegw"]
 [ext_resource type="Texture2D" uid="uid://cgdstwtuqrfwa" path="res://Assets a Usar/daniel-bernal-01c6-pixel-melee-battlefield.jpg" id="6_3g8dp"]
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_d5uon"]
+[ext_resource type="Script" path="res://Carpeta de Scripts/labelPuntuacion.gd" id="7_o3xwf"]
+[ext_resource type="PackedScene" uid="uid://c5j3cuonsryrh" path="res://Escenas/zawardo.tscn" id="8_bnrnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u2cj"]
 size = Vector2(219.326, 28.621)
@@ -16,7 +18,7 @@ size = Vector2(39.9683, 944.382)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6dji"]
 size = Vector2(1607.91, 37.5387)
 
-[node name="CoopNormal" type="StaticBody2D"]
+[node name="battlefield" type="StaticBody2D"]
 scale = Vector2(1.67633, 1.70669)
 script = ExtResource("1_vow1m")
 
@@ -108,3 +110,28 @@ theme_override_fonts/normal_font = ExtResource("6_d5uon")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "Ganador [wave][shake][rainbow] Jugador 1"
+
+[node name="gen_target" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 929.411
+offset_top = 121.287
+offset_right = 969.411
+offset_bottom = 144.287
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+theme_override_colors/font_shadow_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_fonts/font = ExtResource("6_d5uon")
+text = "000"
+horizontal_alignment = 2
+script = ExtResource("7_o3xwf")
+
+[node name="zawardo" parent="." instance=ExtResource("8_bnrnd")]
+offset_left = 404.455
+offset_top = -234.372
+offset_right = 404.455
+offset_bottom = -234.372
+
+[connection signal="timeout" from="gen_target" to="." method="_on_gen_target_timeout"]

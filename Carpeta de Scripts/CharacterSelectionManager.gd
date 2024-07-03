@@ -2,7 +2,6 @@ extends Node
 
 var player
 
-
 var oponent
 
 var selectableCharacters = {

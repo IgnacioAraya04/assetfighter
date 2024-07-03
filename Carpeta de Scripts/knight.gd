@@ -33,7 +33,7 @@ func _ready():
 		global_position = posicion_inicialad
 	else: 
 		global_position = Vector2(1405,209)
-		
+	cambia_vida.emit(stock)		
 func _physics_process(delta):
 	# Add the gravity
 	if ID == 1:

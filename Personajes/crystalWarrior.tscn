@@ -296,6 +296,7 @@ radius = 7.0
 height = 38.0
 
 [node name="crystalWarrior" type="CharacterBody2D"]
+scale = Vector2(1.75466, 1.51235)
 script = ExtResource("1_mmwe0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
