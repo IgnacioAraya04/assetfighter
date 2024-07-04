@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2w5gk2bibym4"]
+[gd_scene load_steps=19 format=3 uid="uid://2w5gk2bibym4"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/menu_de_juego.gd" id="1_icmkb"]
 [ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="1_pj4w5"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://ba43e3xlrome8" path="res://Assets a Usar/CasualGameButtonsVol02/PNG/CGB02-orange_L_btn.png" id="6_ejggk"]
 [ext_resource type="Texture2D" uid="uid://dp22m2ahj7cos" path="res://Assets a Usar/CasualGameButtonsVol02/PNG/CGB02-red_L_btn.png" id="7_jddtw"]
 [ext_resource type="Texture2D" uid="uid://c7d7pnfekcwfu" path="res://Assets a Usar/CasualGameButtonsVol02/PNG/CGB02-red_S_btn.png" id="8_lfpql"]
+[ext_resource type="AudioStream" uid="uid://bcawbug7ft0k3" path="res://Audios/interfaz/pressedOnline.wav" id="11_ygeb7"]
+[ext_resource type="AudioStream" uid="uid://b2qbe4w7km31x" path="res://Audios/interfaz/Pvp.wav" id="12_mcvkd"]
+[ext_resource type="AudioStream" uid="uid://cu7lgynilfsw0" path="res://Audios/interfaz/TablaP.wav" id="13_c838a"]
+[ext_resource type="AudioStream" uid="uid://colgiht8smavs" path="res://Audios/musicaesc/menus.wav" id="14_cklbx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54xj8"]
 shader = ExtResource("2_hhby6")
@@ -150,8 +154,23 @@ icon = ExtResource("8_lfpql")
 flat = true
 icon_alignment = 1
 
+[node name="online" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ygeb7")
+
+[node name="pvp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mcvkd")
+
+[node name="leaderboard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_c838a")
+
+[node name="menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_cklbx")
+
 [connection signal="pressed" from="Contenedor Opciones/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Contenedor Coop/Modo Coop" to="." method="_on_modo_coop_pressed"]
 [connection signal="pressed" from="Contenedor Online/Modo Online" to="." method="_on_modo_online_pressed"]
 [connection signal="pressed" from="Contenedor LeaderBoard/Tabla de puntuaciones" to="." method="_on_tabla_de_puntuaciones_pressed"]
 [connection signal="pressed" from="Contenedor Regresar/Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="finished" from="online" to="." method="_on_online_finished"]
+[connection signal="finished" from="pvp" to="." method="_on_pvp_finished"]
+[connection signal="finished" from="leaderboard" to="." method="_on_leaderboard_finished"]

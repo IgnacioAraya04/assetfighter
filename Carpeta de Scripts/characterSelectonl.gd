@@ -14,6 +14,7 @@ func _ready():
 	
 	
 func _on_fire_knight_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["FireKnight"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -28,6 +29,7 @@ func _on_fire_knight_pressed():
 
 
 func _on_blade_keeper_pressed():
+	$sfx.play()	
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["Bladekeeper"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -42,6 +44,7 @@ func _on_blade_keeper_pressed():
 
 
 func _on_wind_guy_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["WindGuy"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -56,6 +59,7 @@ func _on_wind_guy_pressed():
 
 
 func _on_adventurer_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["Adventurer"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -69,6 +73,7 @@ func _on_adventurer_pressed():
 			get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
 
 func _on_crystal_warrior_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["crystalWarrior"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -83,6 +88,7 @@ func _on_crystal_warrior_pressed():
 
 
 func _on_ground_monk_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["groundMonk"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")
@@ -97,6 +103,7 @@ func _on_ground_monk_pressed():
 
 
 func _on_water_princess_pressed():
+	$sfx.play()
 	if ModoOnline.modo_de_juego == "online":
 		CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters["waterPrincess"]
 		get_tree().change_scene_to_file("res://Escenas/selectormapa.tscn")

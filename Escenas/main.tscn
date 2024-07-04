@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dabihhlx60mai"]
+[gd_scene load_steps=14 format=3 uid="uid://dabihhlx60mai"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/main.gd" id="1_ggn40"]
 [ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="2_6cpmq"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="5_busk2"]
 [ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="6_6dd0h"]
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="7_dfjqu"]
+[ext_resource type="AudioStream" uid="uid://ucggxaxrermy" path="res://Audios/interfaz/jugar.wav" id="8_pq5o3"]
+[ext_resource type="AudioStream" uid="uid://colgiht8smavs" path="res://Audios/musicaesc/menus.wav" id="9_muy6a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_48j6b"]
 shader = ExtResource("2_6cpmq")
@@ -114,5 +116,12 @@ theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[wave][shake][rainbow]Free Assets Fighter"
 
+[node name="jugar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pq5o3")
+
+[node name="menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_muy6a")
+
 [connection signal="pressed" from="Boton de jugar/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Boton de jugar/Salir" to="." method="_on_salir_pressed"]
+[connection signal="finished" from="jugar" to="." method="_on_jugar_finished"]

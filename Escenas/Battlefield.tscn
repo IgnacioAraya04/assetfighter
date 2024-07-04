@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7kc6crjda76r"]
+[gd_scene load_steps=14 format=3 uid="uid://b7kc6crjda76r"]
 
 [ext_resource type="Script" path="res://Carpeta de Scripts/static_body_2d.gd" id="1_vow1m"]
 [ext_resource type="PackedScene" uid="uid://cpwj1f1pxnwdh" path="res://Escenas/menu_pausa.tscn" id="3_qg1to"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="6_d5uon"]
 [ext_resource type="Script" path="res://Carpeta de Scripts/labelPuntuacion.gd" id="7_o3xwf"]
 [ext_resource type="PackedScene" uid="uid://c5j3cuonsryrh" path="res://Escenas/zawardo.tscn" id="8_bnrnd"]
+[ext_resource type="AudioStream" uid="uid://dw2ptmfi0iorm" path="res://Audios/musicaesc/modo online.wav" id="9_briqa"]
+[ext_resource type="AudioStream" uid="uid://gxpck63ass4e" path="res://Audios/musicaesc/modo coop.wav" id="10_pxlrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u2cj"]
 size = Vector2(219.326, 28.621)
@@ -135,5 +137,11 @@ offset_left = 404.455
 offset_top = -234.372
 offset_right = 404.455
 offset_bottom = -234.372
+
+[node name="audio modo online" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_briqa")
+
+[node name="audio modo jvj" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_pxlrt")
 
 [connection signal="timeout" from="gen_target" to="." method="_on_gen_target_timeout"]

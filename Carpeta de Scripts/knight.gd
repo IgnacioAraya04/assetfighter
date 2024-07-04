@@ -181,8 +181,8 @@ func _on_areadaño_area_entered(area):
 		# aplicar knockback
 		knockback_direction = global_position - area.global_position
 		knockback_direction = knockback_direction.normalized() * max(KNOCKBACK_FORCE, MIN_KNOCKBACK_FORCE)
-		knockback_direction.x *= 10  # Aumentar el componente X del knockback
-		knockback_direction.y *= 1.2  # Reducir el componente Y del knockback
+		knockback_direction.x *= 37  # Aumentar el componente X del knockback
+		knockback_direction.y *= 1.2	  # Reducir el componente Y del knockback
 		knockback_resistence += Vector2(1.5, 1.5)
 		is_knocked_back = true
 		porcentaje += daño

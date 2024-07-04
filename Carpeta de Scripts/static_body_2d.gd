@@ -15,6 +15,7 @@ var targets_scene
 
 func _ready():
 	if ModoOnline.modo_de_juego == "online":
+		$"audio modo online".play()
 		targets_scene = load("res://Escenas/target.tscn")
 		puntaje.show()
 		tiempo.show()
@@ -36,6 +37,10 @@ func _ready():
 	else:
 		var Vidas_P2 = $UI/Vidas_P2
 		var Pj_P2 = load(CharacterSelectionManager.oponent).instantiate()
+		$"audio modo jvj".play()
+		puntaje.hide()
+		tiempo.hide()
+		
 		
 		call_deferred("add_child", PJ_P1)	
 	
