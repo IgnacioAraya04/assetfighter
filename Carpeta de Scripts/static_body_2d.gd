@@ -9,9 +9,15 @@ extends StaticBody2D
 var pausa = false 
 var targets_scene
 
+@onready var puntaje = $Label
+@onready var tiempo = $zawardo
+
+
 func _ready():
 	if ModoOnline.modo_de_juego == "online":
 		targets_scene = load("res://Escenas/target.tscn")
+		puntaje.show()
+		tiempo.show()
 		
 		call_deferred("add_child", PJ_P1)
 
@@ -19,8 +25,6 @@ func _ready():
 		Vidas_P1.actualizar_Vida(PJ_P1.stock)
 		PJ_P1.cambia_vida.connect(Vidas_P1.actualizar_Vida)
 		PJ_P1.ID = 1
-
-		
 		
 		
 		if givenplayer == str("res://Personajes/adventurer.tscn"):

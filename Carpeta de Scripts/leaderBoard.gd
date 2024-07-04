@@ -27,6 +27,7 @@ func _on_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		var json = JSON.new()
 		var response_data = json.parse_string(body.get_string_from_utf8())
+		print(response_data)
 		if response_data:
 			var score_list = response_data.data
 			_populate_leaderboard(score_list)

@@ -113,6 +113,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 924.639
 offset_top = 100.194
 offset_right = 964.639
@@ -126,6 +127,7 @@ horizontal_alignment = 2
 script = ExtResource("7_brxd1")
 
 [node name="zawardo" parent="." instance=ExtResource("8_8p6wv")]
+visible = false
 offset_left = 399.683
 offset_top = -254.879
 offset_right = 399.683

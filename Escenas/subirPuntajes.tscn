@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://n8agya7twaug"]
+
+[ext_resource type="Script" path="res://Carpeta de Scripts/subirPuntajes.gd" id="1_d0tv8"]
+[ext_resource type="Shader" path="res://shaderMovimiento.gdshader" id="2_mmyey"]
+[ext_resource type="Texture2D" uid="uid://wlrafh3twveu" path="res://Assets a Usar/Clouds/Clouds 7/1.png" id="3_km8uk"]
+[ext_resource type="Texture2D" uid="uid://dnjbdymkaqjfd" path="res://Assets a Usar/Clouds/Clouds 7/2.png" id="4_126yw"]
+[ext_resource type="Texture2D" uid="uid://ce38qojhor2j5" path="res://Assets a Usar/Clouds/Clouds 7/3.png" id="5_fq7nn"]
+[ext_resource type="Texture2D" uid="uid://oinr40qaugpx" path="res://Assets a Usar/Clouds/Clouds 7/4.png" id="6_2wstc"]
+[ext_resource type="FontFile" uid="uid://dxaiig8i87vno" path="res://Stacked pixel.ttf" id="7_fpfk2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54xj8"]
+shader = ExtResource("2_mmyey")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18wva"]
+shader = ExtResource("2_mmyey")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djh52"]
+shader = ExtResource("2_mmyey")
+shader_parameter/scroll_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vt0f1"]
+shader = ExtResource("2_mmyey")
+shader_parameter/scroll_speed = 0.1
+
+[node name="subirPuntajes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d0tv8")
+
+[node name="Fondo Inicio" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_54xj8")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("3_km8uk")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_18wva")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("4_126yw")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer3"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_djh52")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("5_fq7nn")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Fondo Inicio"]
+position = Vector2(603, 307)
+scale = Vector2(1.84, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo Inicio/ParallaxLayer4"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_vt0f1")
+position = Vector2(192.755, 117.22)
+scale = Vector2(1.84, 2)
+texture = ExtResource("6_2wstc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 1741.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("7_fpfk2")
+theme_override_font_sizes/font_size = 100
+text = "¡Felicidades ha terminado el modo!
+Ingresa tu nombre"
+horizontal_alignment = 1
+
+[node name="NombreInvalido" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 24.0
+offset_top = 736.0
+offset_right = 1897.0
+offset_bottom = 903.0
+theme_override_colors/font_color = Color(1, 0.0392157, 0, 1)
+theme_override_fonts/font = ExtResource("7_fpfk2")
+theme_override_font_sizes/font_size = 50
+text = "Ingresa un nombre con menos de 10 caracteres y ademas caracteres alfanumericos"
+horizontal_alignment = 1
+
+[node name="http_request" type="HTTPRequest" parent="."]
+
+[node name="Username" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.408333
+anchor_top = 0.592593
+anchor_right = 0.641667
+anchor_bottom = 0.624074
+offset_left = 160.0
+offset_right = 256.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("7_fpfk2")
+theme_override_font_sizes/font_size = 70
+placeholder_text = "Nickname"
+metadata/_edit_use_anchors_ = true
+
+[node name="Send" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_top = 0.644444
+anchor_right = 0.433333
+anchor_bottom = 0.688889
+offset_top = -64.0
+offset_right = 80.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("7_fpfk2")
+theme_override_font_sizes/font_size = 70
+text = "Enviar"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="request_completed" from="http_request" to="." method="_on_request_completed"]
+[connection signal="focus_exited" from="Username" to="." method="_on_username_focus_exited"]
+[connection signal="button_up" from="Send" to="." method="_on_send_button_up"]

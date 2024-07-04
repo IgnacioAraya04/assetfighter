@@ -25,6 +25,7 @@ func	_physics_process(delta):
 		if minutos == 0 and segundos == 0:
 			ModoOnline.juegoFinalizado = true
 			fin = true
+			get_tree().change_scene_to_file("res://Escenas/subirPuntajes.tscn")
 			
 
 func _on_cuenta_atras_timeout():
